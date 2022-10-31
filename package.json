@@ -1,7 +1,7 @@
 {
   "name": "jungle-cook",
   "version": "1.0.0",
-  "description": "",
+  "description": "Link to Web4:",
   "main": "index.js",
   "directories": {
     "lib": "lib"
@@ -10,9 +10,17 @@
     "compile-sass": "sass scss/styles.scss css/styles.css -w",
     "live": "live-server"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/n315-sarsexto/jungle-cook.git"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/n315-sarsexto/jungle-cook/issues"
+  },
+  "homepage": "https://github.com/n315-sarsexto/jungle-cook#readme",
   "devDependencies": {
     "sass": "^1.55.0"
   }
