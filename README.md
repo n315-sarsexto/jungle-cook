@@ -1,6 +1,6 @@
 ## The Jungle Cook
 
-### Created by Summer Sexton &
+### Created by Summer Sexton & Kylee Dicken
 
 Link to Web4:
 
