@@ -1,0 +1,21 @@
+footer {
+    width: 100vw;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 40px 50px;
+
+    color: $black;
+    font-family: $copyfont;
+    text-decoration: none;
+
+    position: absolute;
+    bottom: 0;
+
+    img {
+        width: 20px;
+        height: 20px;
+    }
+}

@@ -1,0 +1,48 @@
+nav {
+    width: 100vw;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 40px 50px;
+
+    position: absolute;
+
+    .nav-links {
+        width: 50%;
+
+        display: flex;
+        justify-content: space-between;
+
+        a {
+            padding: 2px;
+            font-family: $headfont;
+            font-size: $xlarge;
+
+            color: $black;
+            text-decoration: none;
+        }
+
+        a:hover {
+            opacity: 40%;
+        }
+
+        .active-page {
+            border-bottom: 2px $black solid;
+        }
+
+        span {
+            padding: 10px 50px;
+
+            border-radius: 26px;
+            background-color: $jungle-yellow;
+            box-shadow: $shadow;
+        }
+
+        span:hover {
+            background-color: $jungle-yellow-x;
+        }
+    }
+
+}
