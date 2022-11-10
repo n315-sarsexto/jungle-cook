@@ -1,0 +1,77 @@
+#home {
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    // background-image: url(../images/hero.jpg);
+    background-image: linear-gradient($jungle-red-overlay, $jungle-red-overlay), url(../images/hero.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    .home-bubbles {
+        height: 400px;
+        width: 480px;
+
+        text-align: center;
+
+        position: relative;
+        // background-color: #000;
+
+        .bubble {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+
+            border-radius: 50%;
+
+            box-shadow: $shadow;
+        }
+
+        .main-bubble {
+            width: 360px;
+            height: 360px;
+
+            padding: 100px;
+
+            position: absolute;
+            bottom: 0;
+            z-index: 99;
+
+            background-color: $jungle-yellow;
+
+            span {
+                font-family: $headfont-b;
+                font-size: $large;
+            }
+
+            p {
+                font-size: $regular;
+            }
+        }
+
+        .sub-bubble {
+            height: 180px;
+            width: 180px;
+
+            padding: 30px;
+
+            position: absolute;
+            top: 0;
+            right: 0;
+            z-index: 98;
+
+            font-size: $small;
+
+            background-color: $jungle-pink;
+        }
+
+        p {
+            margin-bottom: 0;
+        }
+    }
+}

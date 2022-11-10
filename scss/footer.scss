@@ -7,15 +7,41 @@ footer {
 
     padding: 40px 50px;
 
-    color: $black;
-    font-family: $copyfont;
-    text-decoration: none;
-
     position: absolute;
     bottom: 0;
+    z-index: 99;
 
-    img {
-        width: 20px;
-        height: 20px;
+    * {
+        font-size: $large;
+        color: $dark-grey;
+        margin-bottom: 0;
     }
+
+    .footer-links {
+        width: 40%;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        
+        a {
+            color: $dark-grey;
+            font-family: $copyfont;
+            text-decoration: none;
+        }
+    }
+
+    .footer-socials {
+        width: 6%;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        img {
+            width: 20px;
+            height: 20px;
+        }
+    }
+
 }

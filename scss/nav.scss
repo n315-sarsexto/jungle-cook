@@ -8,9 +8,10 @@ nav {
     padding: 40px 50px;
 
     position: absolute;
+    z-index: 99;
 
     .nav-links {
-        width: 50%;
+        // width: 60%;
 
         display: flex;
         justify-content: space-between;
@@ -20,16 +21,22 @@ nav {
             font-family: $headfont;
             font-size: $xlarge;
 
+            margin-left: 40px;
+
             color: $black;
             text-decoration: none;
         }
 
         a:hover {
-            opacity: 40%;
+            color: $dark-grey;
         }
 
         .active-page {
             border-bottom: 2px $black solid;
+        }
+
+        .active-page:hover {
+            border-bottom: 2px $dark-grey solid;
         }
 
         span {
@@ -45,4 +52,39 @@ nav {
         }
     }
 
+    .nav-menu {
+        display: none;
+
+        border: transparent;
+        background-color: transparent;
+
+        svg {
+            height: 40px;
+            width: 50px;
+
+            * {
+                fill: black;
+            }
+        }
+    }
+
+    .nav-menu:hover {
+        cursor: pointer;
+
+        * {
+            fill: $dark-grey
+        }
+    }
+}
+
+@media screen and (max-width: 900px) {
+    nav {
+        .nav-links {
+            display: none;
+        }
+
+        .nav-menu {
+            display: block;
+        }
+    }
 }
