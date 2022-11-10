@@ -13,6 +13,8 @@ footer {
 
     * {
         font-size: $large;
+        font-family: $copyfont;
+        font-style: italic;
         color: $dark-grey;
         margin-bottom: 0;
     }

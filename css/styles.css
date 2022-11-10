@@ -25,15 +25,15 @@ h1, h2, h3, h4, h5, h6, p {
   src: url(../lib/fonts/Caveat-Bold.ttf);
 }
 @font-face {
-  font-family: Gill;
+  font-family: "GillSans";
   src: url(../lib/fonts/GillSans.ttf);
 }
 @font-face {
-  font-family: Gill-I;
+  font-family: "GillSans-I";
   src: url(../lib/fonts/GillSans-Italic.ttf);
 }
 @font-face {
-  font-family: Gill-L;
+  font-family: "GillSans-L";
   src: url(../lib/fonts/GillSans-Light.ttf);
 }
 nav {
@@ -170,6 +170,8 @@ footer {
 }
 footer * {
   font-size: 1.2em;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-style: italic;
   color: #393939;
   margin-bottom: 0;
 }
@@ -181,7 +183,7 @@ footer .footer-links {
 }
 footer .footer-links a {
   color: #393939;
-  font-family: GillSans;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   text-decoration: none;
 }
 footer .footer-socials {
