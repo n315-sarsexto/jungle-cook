@@ -21,6 +21,10 @@
         position: relative;
         // background-color: #000;
 
+        p {
+            font-family: $copyfont;
+        }
+
         .bubble {
             display: flex;
             align-items: center;
@@ -46,7 +50,7 @@
 
             span {
                 font-family: $headfont-b;
-                font-size: $large;
+                font-size: $xlarge;
             }
 
             p {
@@ -65,13 +69,12 @@
             right: 0;
             z-index: 98;
 
-            font-size: $small;
-
             background-color: $jungle-pink;
         }
 
         p {
             margin-bottom: 0;
+            font-size: $small;
         }
     }
 }

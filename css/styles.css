@@ -25,12 +25,12 @@ h1, h2, h3, h4, h5, h6, p {
   src: url(../lib/fonts/Caveat-Bold.ttf);
 }
 @font-face {
-  font-family: "GillSans";
-  src: url(../lib/fonts/GillSans.ttf);
+  font-family: "Lato";
+  src: url(../lib/fonts/Lato/Lato-Regular.ttf);
 }
 @font-face {
-  font-family: "GillSans-I";
-  src: url(../lib/fonts/GillSans-Italic.ttf);
+  font-family: "Lato-I";
+  src: url(../lib/fonts/Lato/Lato-Italic.ttf);
 }
 @font-face {
   font-family: "GillSans-L";
@@ -119,6 +119,9 @@ nav .nav-menu:hover * {
   text-align: center;
   position: relative;
 }
+#home .home-bubbles p {
+  font-family: Lato;
+}
 #home .home-bubbles .bubble {
   display: flex;
   align-items: center;
@@ -138,7 +141,7 @@ nav .nav-menu:hover * {
 }
 #home .home-bubbles .main-bubble span {
   font-family: Caveat-B;
-  font-size: 1.2em;
+  font-size: 1.6em;
 }
 #home .home-bubbles .main-bubble p {
   font-size: 1em;
@@ -151,11 +154,30 @@ nav .nav-menu:hover * {
   top: 0;
   right: 0;
   z-index: 98;
-  font-size: 0.8em;
   background-color: #EFA7A7;
 }
 #home .home-bubbles p {
   margin-bottom: 0;
+  font-size: 0.8em;
+}
+
+#login {
+  height: 100vh;
+  width: 100vw;
+  padding: 100px 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: #FFD972;
+}
+#login .form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+#login .form input {
+  border: none;
+  background-color: transparent;
 }
 
 footer {
@@ -169,8 +191,8 @@ footer {
   z-index: 99;
 }
 footer * {
-  font-size: 1.2em;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 1em;
+  font-family: Lato;
   font-style: italic;
   color: #393939;
   margin-bottom: 0;
@@ -183,7 +205,7 @@ footer .footer-links {
 }
 footer .footer-links a {
   color: #393939;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-family: Lato;
   text-decoration: none;
 }
 footer .footer-socials {
