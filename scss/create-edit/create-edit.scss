@@ -1,0 +1,132 @@
+.createForm{
+    width: 80%;
+    min-height: 100vh;
+    margin: 0 auto;
+    padding-top: 210px;
+    padding-bottom: 210px;
+
+    #greeting{
+        font-size: $large;
+        font-family: $headfont;
+        margin-bottom: 75px;
+    }
+
+    .details{
+        width: 100%;
+        position: relative;
+        input{
+            display: block;
+            width: 100%;
+            height: 30px;
+            margin-bottom: 80px;
+            padding-left: 5px;
+            padding-bottom: 5px;
+            font-size: $regular;
+            font-family: $copyfont;
+            border: 0px;
+            border-bottom: 3px solid black;
+            outline: none;
+        }
+    }
+
+    .instructions{
+        width: 100%;
+        position: relative;
+        h4{
+            font-family: $copyfont;
+            font-weight: normal;
+            font-size: 20px;
+        }
+
+        .addStepBtn{
+            z-index: 150;
+            width: 50px;
+            height: 50px;
+            background-color: $jungle-pink;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 30px;
+            cursor: pointer;
+            position: absolute;
+            bottom: 5px;
+            right: 5px;
+            p{
+                margin-bottom: 0px;
+            }
+        }
+        input{
+            display: block;
+            width: 100%;
+            height: 30px;
+            margin-bottom: 80px;
+            padding-left: 5px;
+            padding-bottom: 5px;
+            font-size: $regular;
+            font-family: $copyfont;
+            border: 0px;
+            border-bottom: 3px solid black;
+            outline: none;
+        }
+    }
+    .ingredients{
+        width: 100%;
+        position: relative;
+        h4{
+            font-family: $copyfont;
+            font-weight: normal;
+            font-size: 20px;
+        }
+
+        .addBtn{
+            z-index: 150;
+            width: 50px;
+            height: 50px;
+            background-color: $jungle-pink;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 30px;
+            cursor: pointer;
+            position: absolute;
+            bottom: 5px;
+            right: 5px;
+            p{
+                margin-bottom: 0px;
+            }
+        }
+        input{
+            display: block;
+            width: 100%;
+            height: 30px;
+            margin-bottom: 80px;
+            padding-left: 5px;
+            padding-bottom: 5px;
+            font-size: $regular;
+            font-family: $copyfont;
+            border: 0px;
+            border-bottom: 3px solid black;
+            outline: none;
+        }
+    }
+
+    .buttonCenter{
+        margin: 0 auto;
+        width: 430px;
+        #submitRecipeBtn{
+            width: 425px;
+            height: 50px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            background-color: $jungle-pink;
+            font-family: $headfont;
+            font-size: $large;
+        }
+    }
+
+}

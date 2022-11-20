@@ -5,7 +5,8 @@
 }
 
 html, body {
-  height: 100%;
+  min-height: 100vh;
+  position: relative;
 }
 
 h1, h2, h3, h4, h5, h6, p {
@@ -37,7 +38,7 @@ h1, h2, h3, h4, h5, h6, p {
   src: url(../lib/fonts/GillSans-Light.ttf);
 }
 nav {
-  width: 100vw;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -180,8 +181,134 @@ nav .nav-menu:hover * {
   background-color: transparent;
 }
 
+.createForm {
+  width: 80%;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding-top: 210px;
+  padding-bottom: 210px;
+}
+.createForm #greeting {
+  font-size: 1.2em;
+  font-family: Caveat;
+  margin-bottom: 75px;
+}
+.createForm .details {
+  width: 100%;
+  position: relative;
+}
+.createForm .details input {
+  display: block;
+  width: 100%;
+  height: 30px;
+  margin-bottom: 80px;
+  padding-left: 5px;
+  padding-bottom: 5px;
+  font-size: 1em;
+  font-family: Lato;
+  border: 0px;
+  border-bottom: 3px solid black;
+  outline: none;
+}
+.createForm .instructions {
+  width: 100%;
+  position: relative;
+}
+.createForm .instructions h4 {
+  font-family: Lato;
+  font-weight: normal;
+  font-size: 20px;
+}
+.createForm .instructions .addStepBtn {
+  z-index: 150;
+  width: 50px;
+  height: 50px;
+  background-color: #EFA7A7;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 30px;
+  cursor: pointer;
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+}
+.createForm .instructions .addStepBtn p {
+  margin-bottom: 0px;
+}
+.createForm .instructions input {
+  display: block;
+  width: 100%;
+  height: 30px;
+  margin-bottom: 80px;
+  padding-left: 5px;
+  padding-bottom: 5px;
+  font-size: 1em;
+  font-family: Lato;
+  border: 0px;
+  border-bottom: 3px solid black;
+  outline: none;
+}
+.createForm .ingredients {
+  width: 100%;
+  position: relative;
+}
+.createForm .ingredients h4 {
+  font-family: Lato;
+  font-weight: normal;
+  font-size: 20px;
+}
+.createForm .ingredients .addBtn {
+  z-index: 150;
+  width: 50px;
+  height: 50px;
+  background-color: #EFA7A7;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 30px;
+  cursor: pointer;
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+}
+.createForm .ingredients .addBtn p {
+  margin-bottom: 0px;
+}
+.createForm .ingredients input {
+  display: block;
+  width: 100%;
+  height: 30px;
+  margin-bottom: 80px;
+  padding-left: 5px;
+  padding-bottom: 5px;
+  font-size: 1em;
+  font-family: Lato;
+  border: 0px;
+  border-bottom: 3px solid black;
+  outline: none;
+}
+.createForm .buttonCenter {
+  margin: 0 auto;
+  width: 430px;
+}
+.createForm .buttonCenter #submitRecipeBtn {
+  width: 425px;
+  height: 50px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  background-color: #EFA7A7;
+  font-family: Caveat;
+  font-size: 1.2em;
+}
+
 footer {
-  width: 100vw;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;

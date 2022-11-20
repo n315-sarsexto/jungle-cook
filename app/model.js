@@ -1,4 +1,3 @@
-
 //basic change page function
 export function changePage(pageID, callback){
     //if the page ID is nothing, go to the home page. otherwise, go to whatever page it is.
@@ -15,3 +14,4 @@ export function changePage(pageID, callback){
           });
     }
 }
+
