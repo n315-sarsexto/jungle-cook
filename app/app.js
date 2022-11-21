@@ -33,11 +33,12 @@ function updateNav(pageID) {
 
 //add another input field when user clicks to add a step
 function addRecipeStepsListener() {
+  console.log("Listeners added");
   var ingredCount = 3;
   var stepCount = 3;
 
   /* This is creating a new input field when the user clicks the add ingredient button. */
-  $(".addBtn").on("click", (e) => {
+  $("#addBtn").on("click", (e) => {
     console.log("Click!");
     $(".ingredients").append(`
         <input type="text" id="ingred${ingredCount}" placeholder="Ingredient #${
@@ -47,7 +48,7 @@ function addRecipeStepsListener() {
   });
 
   /* This is creating a new input field when the user clicks the add step button. */
-  $(".addStepBtn").on("click", (e) => {
+  $("#addStepBtn").on("click", (e) => {
     console.log("Click!");
     $(".instructions").append(`
         <input type="text" id="step${stepCount}" placeholder="Step #${
