@@ -99,19 +99,19 @@ nav .nav-menu:hover * {
   border-bottom: 2px #393939 solid;
 }
 
-.menu {
+#menu {
   height: 100vh;
   width: 100vw;
   position: fixed;
   display: flex;
   z-index: 99;
 }
-.menu .menu-offclick {
+#menu .menu-offclick {
   height: 100vh;
   width: 40%;
   z-index: 98;
 }
-.menu .menu-links {
+#menu .menu-links {
   height: 100vh;
   width: 60%;
   padding: 40px 20px;
@@ -120,13 +120,13 @@ nav .nav-menu:hover * {
   box-shadow: 0px 10px 6px rgba(0, 0, 0, 0.1882352941);
   background-color: #FFF;
 }
-.menu .menu-links a {
+#menu .menu-links a {
   margin-bottom: 20px;
 }
-.menu .menu-links svg {
+#menu .menu-links svg {
   margin: 0 0 40px 40px;
 }
-.menu .menu-links .login-button {
+#menu .menu-links .login-button {
   position: absolute;
   bottom: 40px;
 }
