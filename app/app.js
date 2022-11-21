@@ -57,11 +57,22 @@ export function initRecipeListener() {
 }
 
 //listen for the hashtag change
-function initURLListener() {
-  $(window).on("hashchange", changeRoute);
+function initNavListeners() {
+  $(window).on("hashchange", () => {
+    changeRoute();
+    $("#menu").css("display", "none");
+  });
   changeRoute();
+
+  $("#menuButton").on("click", () => {
+    $("#menu").css("display", "flex");
+  });
+
+  $("#offMenu").on("click", () => {
+    $("#menu").css("display", "none");
+  });
 }
 
 $(document).ready(function () {
-  initURLListener();
+  initNavListeners();
 });
