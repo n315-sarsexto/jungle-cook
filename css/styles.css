@@ -37,6 +37,16 @@ h1, h2, h3, h4, h5, h6, p {
   font-family: "GillSans-L";
   src: url(../lib/fonts/GillSans-Light.ttf);
 }
+.login-button span {
+  padding: 10px 50px;
+  border-radius: 26px;
+  background-color: #FFD972;
+  box-shadow: 0px 10px 6px rgba(0, 0, 0, 0.1882352941);
+}
+.login-button span:hover {
+  background-color: #ecc046;
+}
+
 nav {
   width: 100%;
   display: flex;
@@ -44,42 +54,17 @@ nav {
   justify-content: space-between;
   padding: 40px 50px;
   position: absolute;
-  z-index: 99;
+  z-index: 90;
 }
 nav .nav-links {
   display: flex;
   justify-content: space-between;
 }
-nav .nav-links a {
-  padding: 2px;
-  font-family: Caveat;
-  font-size: 1.6em;
-  margin-left: 40px;
-  color: #000;
-  text-decoration: none;
-}
-nav .nav-links a:hover {
-  color: #393939;
-}
-nav .nav-links .active-page {
-  border-bottom: 2px #000 solid;
-}
-nav .nav-links .active-page:hover {
-  border-bottom: 2px #393939 solid;
-}
-nav .nav-links span {
-  padding: 10px 50px;
-  border-radius: 26px;
-  background-color: #FFD972;
-  box-shadow: 0px 10px 6px rgba(0, 0, 0, 0.1882352941);
-}
-nav .nav-links span:hover {
-  background-color: #ecc046;
-}
 nav .nav-menu {
   display: none;
   border: transparent;
   background-color: transparent;
+  z-index: 99;
 }
 nav .nav-menu svg {
   height: 40px;
@@ -93,6 +78,57 @@ nav .nav-menu:hover {
 }
 nav .nav-menu:hover * {
   fill: #393939;
+}
+
+.links a {
+  width: fit-content;
+  padding: 2px;
+  font-family: Caveat;
+  font-size: 1.6em;
+  margin-left: 40px;
+  color: #000;
+  text-decoration: none;
+}
+.links a:hover {
+  color: #393939;
+}
+.links .active-page {
+  border-bottom: 2px #000 solid;
+}
+.links .active-page:hover {
+  border-bottom: 2px #393939 solid;
+}
+
+.menu {
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  display: flex;
+  z-index: 99;
+}
+.menu .menu-offclick {
+  height: 100vh;
+  width: 40%;
+  z-index: 98;
+}
+.menu .menu-links {
+  height: 100vh;
+  width: 60%;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 10px 6px rgba(0, 0, 0, 0.1882352941);
+  background-color: #FFF;
+}
+.menu .menu-links a {
+  margin-bottom: 20px;
+}
+.menu .menu-links svg {
+  margin: 0 0 40px 40px;
+}
+.menu .menu-links .login-button {
+  position: absolute;
+  bottom: 40px;
 }
 
 @media screen and (max-width: 900px) {
@@ -137,7 +173,7 @@ nav .nav-menu:hover * {
   padding: 100px;
   position: absolute;
   bottom: 0;
-  z-index: 99;
+  z-index: 90;
   background-color: #FFD972;
 }
 #home .home-bubbles .main-bubble span {
@@ -172,13 +208,21 @@ nav .nav-menu:hover * {
   background-color: #FFD972;
 }
 #login .form {
+  width: 30%;
   display: flex;
   justify-content: center;
   flex-direction: column;
 }
 #login .form input {
+  padding: 5px;
+  margin-top: 50px;
   border: none;
+  border-bottom: 3px solid #000;
   background-color: transparent;
+}
+#login .form input ::placeholder {
+  color: #000;
+  opacity: 1;
 }
 
 #browse {
@@ -233,7 +277,7 @@ nav .nav-menu:hover * {
   font-size: 20px;
 }
 .createForm .instructions #addStepBtn {
-  z-index: 150;
+  z-index: 50;
   width: 50px;
   height: 50px;
   background-color: #EFA7A7;
@@ -250,6 +294,7 @@ nav .nav-menu:hover * {
 }
 .createForm .instructions #addStepBtn p {
   margin-bottom: 0px;
+  z-index: 50;
 }
 .createForm .instructions input {
   display: block;
@@ -274,7 +319,7 @@ nav .nav-menu:hover * {
   font-size: 20px;
 }
 .createForm .ingredients #addBtn {
-  z-index: 150;
+  z-index: 50;
   width: 50px;
   height: 50px;
   background-color: #EFA7A7;
@@ -291,6 +336,7 @@ nav .nav-menu:hover * {
 }
 .createForm .ingredients #addBtn p {
   margin-bottom: 0px;
+  z-index: 50;
 }
 .createForm .ingredients input {
   display: block;
@@ -328,7 +374,7 @@ footer {
   padding: 40px 50px;
   position: absolute;
   bottom: 0;
-  z-index: 99;
+  z-index: 90;
 }
 footer * {
   font-size: 1em;

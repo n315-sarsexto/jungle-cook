@@ -46,3 +46,16 @@ h1, h2, h3, h4, h5, h6, p {
     src: url(../lib/fonts/GillSans-Light.ttf);
 }
 
+.login-button {
+    span {
+        padding: 10px 50px;
+    
+        border-radius: 26px;
+        background-color: $jungle-yellow;
+        box-shadow: $shadow;
+    }
+    
+    span:hover {
+        background-color: $jungle-yellow-x;
+    }
+}
