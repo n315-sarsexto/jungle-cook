@@ -58,7 +58,7 @@ function displayRecipePreviews(){
     //append a new preview card for each item in recipe array
     for(let i = 0; i < recipe.length; i++){
         $(".recipes").append(`
-            <div class="recipe" id="${i}">
+            <div class="recipe" id="view${i}">
                 <div class="recipeImg">
                     <img src="images/${recipe[i]["recipe-img"]}">
                 </div>
