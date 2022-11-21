@@ -11,6 +11,34 @@
 
 <body>
 
+    <div class="menu" style="display: none;">
+        <div class="menu-links links">
+            <svg xmlns="http://www.w3.org/2000/svg" width="169" height="55" viewBox="0 0 169 55">
+                <g id="Group_1" data-name="Group 1" transform="translate(-50 -38)">
+                    <circle id="Ellipse_1" data-name="Ellipse 1" cx="16" cy="16" r="16" transform="translate(52 38)"
+                        fill="#c7eae4" />
+                    <circle id="Ellipse_2" data-name="Ellipse 2" cx="15" cy="15" r="15" transform="translate(76 54)"
+                        fill="#ffd972" />
+                    <circle id="Ellipse_3" data-name="Ellipse 3" cx="27" cy="27" r="27" transform="translate(103 39)"
+                        fill="#a7e8bd" />
+                    <circle id="Ellipse_4" data-name="Ellipse 4" cx="12" cy="12" r="12" transform="translate(185 57)"
+                        fill="#efa7a7" />
+                    <text id="The_Jungle_Cook" data-name="The Jungle Cook" transform="translate(50 74)" font-size="25"
+                        font-family="Caveat-Regular, Caveat" letter-spacing="0.1em">
+                        <tspan x="0" y="0">The Jungle Cook</tspan>
+                    </text>
+                </g>
+            </svg>
+            <a id="homeLink" href="#home">Home</a>
+            <a id="browseLink" href="#browse">Browse</a>
+            <a id="createLink" href="#create">Create Recipe</a>
+            <a href="#login" class="login-button"><span>Login</span></a>
+        </div>
+        <div class="menu-offclick">
+
+        </div>
+    </div>
+
     <nav>
         <a href="#home">
             <svg xmlns="http://www.w3.org/2000/svg" width="169" height="55" viewBox="0 0 169 55">
@@ -31,13 +59,13 @@
             </svg>
         </a>
 
-        <div class="nav-links">
+        <div class="nav-links links">
             <a id="homeLink" href="#home">Home</a>
             <a id="browseLink" href="#browse">Browse</a>
             <a id="createLink" href="#create">Create Recipe</a>
-            <a href="#login"><span>Login</span></a>
+            <a href="#login" class="login-button"><span>Login</span></a>
         </div>
-        <button class="nav-menu">
+        <button id="menu-button" class="nav-menu">
             <svg class="svg-icon" viewBox="0 0 20 20">
                 <path fill="none"
                     d="M3.314,4.8h13.372c0.41,0,0.743-0.333,0.743-0.743c0-0.41-0.333-0.743-0.743-0.743H3.314
@@ -48,6 +76,7 @@
             </svg>
         </button>
     </nav>
+
 
     <div id="app"></div>
 

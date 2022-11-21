@@ -8,48 +8,13 @@ nav {
     padding: 40px 50px;
 
     position: absolute;
-    z-index: 99;
+    z-index: 90;
 
     .nav-links {
         // width: 60%;
 
         display: flex;
         justify-content: space-between;
-
-        a {
-            padding: 2px;
-            font-family: $headfont;
-            font-size: $xlarge;
-
-            margin-left: 40px;
-
-            color: $black;
-            text-decoration: none;
-        }
-
-        a:hover {
-            color: $dark-grey;
-        }
-
-        .active-page {
-            border-bottom: 2px $black solid;
-        }
-
-        .active-page:hover {
-            border-bottom: 2px $dark-grey solid;
-        }
-
-        span {
-            padding: 10px 50px;
-
-            border-radius: 26px;
-            background-color: $jungle-yellow;
-            box-shadow: $shadow;
-        }
-
-        span:hover {
-            background-color: $jungle-yellow-x;
-        }
     }
 
     .nav-menu {
@@ -57,6 +22,8 @@ nav {
 
         border: transparent;
         background-color: transparent;
+
+        z-index: 99;
 
         svg {
             height: 40px;
@@ -75,6 +42,78 @@ nav {
             fill: $dark-grey
         }
     }
+}
+
+.links {
+    a {
+        width: fit-content;
+        padding: 2px;
+        font-family: $headfont;
+        font-size: $xlarge;
+
+        margin-left: 40px;
+
+        color: $black;
+        text-decoration: none;
+    }
+
+    a:hover {
+        color: $dark-grey;
+    }
+
+    .active-page {
+        border-bottom: 2px $black solid;
+    }
+
+    .active-page:hover {
+        border-bottom: 2px $dark-grey solid;
+    }
+}
+
+.menu {
+    height: 100vh;
+    width: 100vw;
+
+    position: fixed;
+
+    display: flex;
+
+    z-index: 99;
+
+    .menu-offclick { 
+        height: 100vh;
+        width: 40%;
+        z-index: 98;
+    }
+
+    .menu-links {
+        height: 100vh;
+        width: 60%;
+
+        padding: 40px 20px;
+
+        display: flex;
+        flex-direction: column;
+
+        box-shadow: $shadow;
+
+        background-color: #FFF;
+
+        a {
+            margin-bottom: 20px;
+        }
+
+        svg {
+            margin: 0 0 40px 40px;
+        }
+
+        .login-button {
+            position: absolute;
+            bottom: 40px;
+        }
+    }
+
+
 }
 
 @media screen and (max-width: 900px) {

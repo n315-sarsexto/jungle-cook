@@ -11,13 +11,22 @@
     background-color: $jungle-yellow;
 
     .form {
+        width: 30%;
         display: flex;
         justify-content: center;
         flex-direction: column;
     }
 
     .form input {
+        padding: 5px;
+        margin-top: 50px;
         border: none;
+        border-bottom: 3px solid #000;
         background-color: transparent;
+    }
+
+    .form input ::placeholder {
+        color: #000;
+        opacity: 1;
     }
 }
