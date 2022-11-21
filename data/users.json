@@ -1,0 +1,20 @@
+[
+    {
+        "fname": "user",
+        "lname": "user",
+        "email": "user@iu.edu",
+        "password": "password"
+    },
+    {
+        "fname": "Summer",
+        "lname": "Sexton",
+        "email": "summer@iu.edu",
+        "password": "adminone"
+    },
+    {
+        "fname": "Kylee",
+        "lname": "Dicken",
+        "email": "kylee@iu.edu",
+        "password": "admintwo"
+    }
+]
