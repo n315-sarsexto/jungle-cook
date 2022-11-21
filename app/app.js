@@ -14,7 +14,6 @@ function changeRoute() {
     updateNav("home");
   } else if (pageID == "create") {
     MODEL.changePage(pageID);
-    addRecipeStepsListener();
     updateNav(pageID);
   }
   //else, go to whatever the page is
@@ -32,8 +31,7 @@ function updateNav(pageID) {
 }
 
 //add another input field when user clicks to add a step
-function addRecipeStepsListener() {
-  console.log("Listeners added");
+export function initRecipeListener() {
   var ingredCount = 3;
   var stepCount = 3;
 

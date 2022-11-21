@@ -1,4 +1,4 @@
-
+import * as LISTENERS from "./app.js"
 
 //import JSON as this is where data is modified
 import recipe from '../data/recipes.json' assert {type: 'json'}
@@ -16,6 +16,7 @@ export function changePage(pageID, callback){
         $.get(`pages/create/create.html`, function (data) {
             //console.log("data " + data);
             $("#app").html(data);
+            LISTENERS.initRecipeListener();
         });
     }
     else{
