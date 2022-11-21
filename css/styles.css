@@ -181,6 +181,19 @@ nav .nav-menu:hover * {
   background-color: transparent;
 }
 
+#browse {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 60px;
+  background-image: linear-gradient(rgba(167, 232, 189, 0.5764705882), rgba(167, 232, 189, 0.5764705882)), url(../images/recipe-hero.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .createForm {
   width: 80%;
   min-height: 100vh;
