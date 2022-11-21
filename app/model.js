@@ -24,6 +24,12 @@ export function changePage(pageID, recipeID, callback){
             $("#app").html(data);
             displayRecipe(recipeID);
         });
+    }else if(pageID == "browse"){
+        $.get(`pages/${pageID}/${pageID}.html`, function (data) {
+            //console.log("data " + data);
+            $("#app").html(data);
+            displayRecipePreviews();
+          });
     }
     else{
         $.get(`pages/${pageID}/${pageID}.html`, function (data) {
@@ -38,13 +44,39 @@ function displayRecipe(recipeID){
     recipeID = 0;
     //use the JSON to append elements of the recipe to the HTML
     $("#recipeName").append(`<h5>${recipe[recipeID].name}</h5>`)
-    $("#recipeImage").append(`<img src="./images/${recipe[recipeID]["recipe-img"]}">`)
+    $("#recipeImage").append(`<img src="images/${recipe[recipeID]["recipe-img"]}">`)
     $("#recipeDescription").append(`<p>${recipe[recipeID].description}</p>`)
     $("#recipeTime").append(`<p>${recipe[recipeID].time}</p>`)
     $("#recipeServings").append(`<p>${recipe[recipeID].servings}</p>`)
 
     loopIngredients(recipeID);
     loopInstructions(recipeID);
+}
+
+//generate preview cards for recipes
+function displayRecipePreviews(){
+    //append a new preview card for each item in recipe array
+    for(let i = 0; i < recipe.length; i++){
+        $(".recipes").append(`
+            <div class="recipe" id="${i}">
+                <div class="recipeImg">
+                    <img src="images/${recipe[i]["recipe-img"]}">
+                </div>
+                <div class="recipeDetails">
+                    <h1>${recipe[i].name}</h1>
+                    <p>${recipe[i].description}</p>
+                    <div class="time">
+                        <img src="images/time.svg">
+                        <p>${recipe[i].time}</p>
+                    </div>
+                    <div class="servings">
+                        <img src="images/servings.svg">
+                        ${recipe[i].servings}
+                    </div>
+                </div>
+            </div>
+        `)
+    }
 }
 
 //function to pull instructions, to be able to then add them to the recipe view
