@@ -1,0 +1,75 @@
+.recipeDetails{
+    width: 80%;
+    margin: 0 auto;
+    padding-top: 210px;
+    padding-bottom: 210px;
+    position: relative;
+
+    h2{
+        font-family: $copyfont;
+        font-size: 25px;
+        margin-bottom: 35px;
+        font-weight: normal;
+        letter-spacing: 5px;
+    }h3{
+        font-family: $copyfont;
+        font-size: 20px;
+        font-weight: normal;
+        letter-spacing: 5px;
+    }
+    p{
+        font-family: $headfont;
+        font-size: 20px;
+    }
+
+    #recipeName{
+        position: absolute;
+        top: 25em;
+        left: -10em;
+        rotate: (-90deg);
+        z-index: 20;
+        h5{
+            font-family: $copyfont;
+            font-weight: normal;
+            text-transform: lowercase;
+            letter-spacing: 5px;
+            font-size: 35px;
+            margin-bottom: 0px;
+        }
+    }
+
+    .recipeOverview{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+        margin-bottom: 50px;
+        #recipeImage{
+            width: 45%;
+            height: 420px;
+            overflow: hidden;
+            img{
+                width: 100%;
+            }
+        }
+
+        .aboutRecipe{
+            width: 40%;
+        }
+    }
+
+    .ingredientsList, .instructionsList{
+        margin-bottom: 60px;
+    }
+
+    button{
+        background-color: $jungle-yellow;
+        border: none;
+        border-radius: 20px;
+        height: 45px;
+        width: 130px;
+        font-family: $headfont;
+        font-size: 20px;
+    }
+}

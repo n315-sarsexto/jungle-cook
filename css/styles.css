@@ -366,6 +366,77 @@ nav .nav-menu:hover * {
   font-size: 1.2em;
 }
 
+.recipeDetails {
+  width: 80%;
+  margin: 0 auto;
+  padding-top: 210px;
+  padding-bottom: 210px;
+  position: relative;
+}
+.recipeDetails h2 {
+  font-family: Lato;
+  font-size: 25px;
+  margin-bottom: 35px;
+  font-weight: normal;
+  letter-spacing: 5px;
+}
+.recipeDetails h3 {
+  font-family: Lato;
+  font-size: 20px;
+  font-weight: normal;
+  letter-spacing: 5px;
+}
+.recipeDetails p {
+  font-family: Caveat;
+  font-size: 20px;
+}
+.recipeDetails #recipeName {
+  position: absolute;
+  top: 25em;
+  left: -10em;
+  rotate: -90deg;
+  z-index: 20;
+}
+.recipeDetails #recipeName h5 {
+  font-family: Lato;
+  font-weight: normal;
+  text-transform: lowercase;
+  letter-spacing: 5px;
+  font-size: 35px;
+  margin-bottom: 0px;
+}
+.recipeDetails .recipeOverview {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  margin-bottom: 50px;
+}
+.recipeDetails .recipeOverview #recipeImage {
+  width: 45%;
+  height: 420px;
+  overflow: hidden;
+}
+.recipeDetails .recipeOverview #recipeImage img {
+  width: 100%;
+}
+.recipeDetails .recipeOverview .aboutRecipe {
+  width: 40%;
+}
+.recipeDetails .ingredientsList, .recipeDetails .instructionsList {
+  margin-bottom: 60px;
+}
+.recipeDetails button {
+  background-color: #FFD972;
+  border: none;
+  border-radius: 20px;
+  height: 45px;
+  width: 130px;
+  font-family: Caveat;
+  font-size: 20px;
+}
+
 footer {
   width: 100%;
   display: flex;
