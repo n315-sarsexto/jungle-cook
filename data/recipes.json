@@ -3,10 +3,40 @@
         "id": 0,
         "name": "Supreme Pizza",
         "recipe-img": "recipe-pizza.jpg",
-        "time": "1 hour 24 minutes",
+        "time": "1 h 24 min",
         "description": "Make pizza night super duper out of this world with homemade pizza. This recipe is supreme with vegetables and two types of meat. Yum!",
-        "servings": "4 servings",
+        "servings": 4,
         "ingredients": ["1/4 batch pizza dough","2 tablespoons Last-Minute Pizza Sauce","10 slices pepperoni","1 cup cooked and crumbled Italian sausage","2 large mushrooms, sliced","1/4 bell pepper, sliced","1 tablespoon sliced black olives","1 cup shredded mozzarella cheese"],
         "instructions": ["Preheat the oven to 475°. Spray pizza pan with nonstick cooking or line a baking sheet with parchment paper.","Flatten dough into a thin round and place on the pizza pan.","Spread pizza sauce over the dough.","Layer the toppings over the dough in the order listed.","Bake for 8 to 10 minutes or until the crust is crisp and the cheese melted and lightly browned."]
+    },
+    {
+        "id": 1,
+        "name": "Classic Burger",
+        "recipe-img": "recipe-burger.jpg",
+        "time": "30 min",
+        "description": "Sink your teeth into a delicious restaurant-style, hamburger recipe made from lean beef. Skip the prepackaged patties and take the extra time to craft up your own, and that little extra effort will be worth it.",
+        "servings": 4,
+        "ingredients": [],
+        "instructions": []
+    },
+    {
+        "id": 2,
+        "name": "Chicken Biryani",
+        "recipe-img": "recipe-pilaf.jpg",
+        "time": "1 h 15 min",
+        "description": "Chicken Biryani is a bold and flavorful Indian dish with crazy tender bites of chicken with bell peppers in a deliciously spiced and fragrant rice.",
+        "servings": 6,
+        "ingredients": [],
+        "instructions": []
+    },
+    {
+        "id": 3,
+        "name": "Ch. Chow Mein",
+        "recipe-img": "recipe-chowmein.jpg",
+        "time": "20 min",
+        "description": "A great Chow Mein comes down to the sauce - it takes more than just soy sauce and sugar! Jam packed with a surprising amount of hidden vegetables, customize this Chicken Chow Mein recipe using your protein of choice!",
+        "servings": 4,
+        "ingredients": [],
+        "instructions": []
     }
 ]
