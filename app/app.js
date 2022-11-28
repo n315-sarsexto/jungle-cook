@@ -37,7 +37,7 @@ export function initRecipeListener() {
 
   /* This is creating a new input field when the user clicks the add ingredient button. */
   $("#addBtn").on("click", (e) => {
-    console.log("Click!");
+    // console.log("Click!");
     $(".ingredients").append(`
         <input type="text" id="ingred${ingredCount}" placeholder="Ingredient #${
       ingredCount + 1
@@ -47,7 +47,7 @@ export function initRecipeListener() {
 
   /* This is creating a new input field when the user clicks the add step button. */
   $("#addStepBtn").on("click", (e) => {
-    console.log("Click!");
+    // console.log("Click!");
     $(".instructions").append(`
         <input type="text" id="step${stepCount}" placeholder="Step #${
       stepCount + 1

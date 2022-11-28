@@ -390,6 +390,20 @@ nav .nav-menu:hover * {
   border-bottom: 3px solid black;
   outline: none;
 }
+.createForm .details input[type=file] {
+  height: 40px;
+}
+.createForm .details input[type=file]::file-selector-button {
+  cursor: pointer;
+  width: 110px;
+  height: 36px;
+  border: 0px;
+  border-radius: 20px;
+  background-color: #EFA7A7;
+  font-family: Caveat;
+  font-size: 20px;
+  float: right;
+}
 .createForm .instructions {
   width: 100%;
   position: relative;
