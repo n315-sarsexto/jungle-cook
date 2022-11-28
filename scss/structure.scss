@@ -47,15 +47,26 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 .login-button {
-    span {
-        padding: 10px 50px;
-    
-        border-radius: 26px;
-        background-color: $jungle-yellow;
-        box-shadow: $shadow;
+    height: 50px;
+    padding: 10px 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-family: $headfont;
+    font-size: $xlarge;
+
+    border: none;
+    border-radius: 26px;
+    background-color: $jungle-yellow;
+    box-shadow: $shadow;
+
+    * {
+        padding: 20px 50px;
     }
-    
-    span:hover {
-        background-color: $jungle-yellow-x;
-    }
+}
+
+.login-button:hover {
+    background-color: $jungle-yellow-x;
 }

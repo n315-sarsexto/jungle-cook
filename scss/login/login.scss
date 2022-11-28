@@ -1,14 +1,19 @@
 #login {
-    height: 100vh;
+    min-height: 100vh;
     width: 100vw;
 
     padding: 100px 60px;
 
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-around;
+    flex-wrap: wrap;
 
     background-color: $jungle-yellow;
+
+    h2 {
+        margin-bottom: 60px;
+    }
 
     .form {
         width: 30%;
@@ -19,7 +24,11 @@
 
     .form input {
         padding: 5px;
-        margin-top: 50px;
+        margin-bottom: 50px;
+
+        color: #000;
+        font-family: $copyfont;
+
         border: none;
         border-bottom: 3px solid #000;
         background-color: transparent;
