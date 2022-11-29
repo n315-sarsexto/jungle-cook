@@ -7,20 +7,33 @@ let previousPage = "";
 function changeRoute() {
   let hashTag = window.location.hash;
   let pageID = hashTag.replace("#", "");
+  let viewID = hashTag.replace("#view/", "");
 
-  //check if pageID is blank to go to home.
-  if (pageID == "") {
-    MODEL.changePage("home");
-    updateNav("home");
-  } else if (pageID == "create") {
-    MODEL.changePage(pageID);
-    updateNav(pageID);
+  
+  if (viewID == `#${pageID}` || pageID == ""){
+    //check if pageID is blank to go to home.
+    console.log("matach")
+    if (pageID == "") {
+      MODEL.changePage("home");
+      updateNav("home");
+    } else if (pageID == "create") {
+      MODEL.changePage(pageID);
+      updateNav(pageID);
+    }
+    //else, go to whatever the page is
+    else {
+      MODEL.changePage(pageID);
+      updateNav(pageID);
+    }
+  }else{
+    console.log("nope");
+  
+      console.log(pageID)
+      MODEL.changePage("view", viewID);
+      // updateNav(pageID);
+    
   }
-  //else, go to whatever the page is
-  else {
-    MODEL.changePage(pageID);
-    updateNav(pageID);
-  }
+  
 }
 
 function updateNav(pageID) {
@@ -54,6 +67,14 @@ export function initRecipeListener() {
     }">`);
     stepCount++;
   });
+}
+
+export function initPreviewListener() {
+  //function is used to create a listener for the preview of a recipe
+    $(".browse-recipe a").on("click", (e) => {
+      //pass the target into changeRoute to go to view
+      changeRoute(e.target.id)
+    })
 }
 
 //listen for the hashtag change
