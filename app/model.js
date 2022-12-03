@@ -5,7 +5,7 @@ import recipe from "../data/recipes.json" assert { type: "json" };
 
 //basic change page function
 export function changePage(pageID, recipeID, callback) {
-  console.log(recipe);
+  //console.log(recipe);
   //if the page ID is nothing, go to the home page. otherwise, go to whatever page it is.
   if (pageID == "") {
     $.get(`pages/home/home.html`, function (data) {
@@ -29,6 +29,7 @@ export function changePage(pageID, recipeID, callback) {
       //console.log("data " + data);
       $("#app").html(data);
       displayRecipePreviews();
+      LISTENERS.initPreviewListener();
     });
   } else {
     $.get(`pages/${pageID}/${pageID}.html`, function (data) {
@@ -40,7 +41,8 @@ export function changePage(pageID, recipeID, callback) {
 
 //function to display a recipe
 function displayRecipe(recipeID) {
-  recipeID = 0;
+  console.log(recipe[recipeID])
+  //recipeID = 0;
   //use the JSON to append elements of the recipe to the HTML
   $("#recipeName").append(`<h5>${recipe[recipeID].name}</h5>`);
   $("#recipeImage").append(
@@ -58,13 +60,13 @@ function displayRecipe(recipeID) {
 function displayRecipePreviews() {
   //append a new preview card for each item in recipe array
   for (let i = 0; i < recipe.length; i++) {
-    console.log(recipe[i]);
+    //console.log(recipe[i]);
     $(".browse-recipes").append(`
-            <div class="browse-recipe" id="view${i}">
+            <div class="browse-recipe" id="${i}">
             <div class="browse-recipe-img" style="background-image: url(images/${recipe[i]["recipe-img"]})">
             </div>
             <div class="browse-recipe-details">
-                <a href="#" class="recipe-details-title">${recipe[i].name}</a>
+                <a id="${i}" href="#view/${i}" class="recipe-details-title">${recipe[i].name}</a>
                 <p class="recipe-details-desc">${recipe[i].description}</p>
                 <table class="recipe-details-info">
                     <tr class="recipe-time icon-text">
