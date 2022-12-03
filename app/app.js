@@ -1,7 +1,7 @@
 import * as MODEL from "./model.js";
 
-let activePage = "";
-let previousPage = "";
+var activePage = "";
+var previousPage = "";
 
 //handle the page change, taking the # of the page URL to change it
 function changeRoute() {
@@ -25,9 +25,19 @@ function changeRoute() {
 
 function updateNav(pageID) {
   previousPage = activePage;
-  $("#" + previousPage + "Link").removeClass("active-page");
+  $("#menu #" + previousPage + "Link").removeClass("active-page");
+  $("nav #" + previousPage + "Link").removeClass("active-page");
   activePage = pageID;
-  $("#" + activePage + "Link").addClass("active-page");
+  $("#menu #" + activePage + "Link").addClass("active-page");
+  $("nav #" + activePage + "Link").addClass("active-page");
+
+  console.log(pageID);
+  console.log(
+    "previouspage",
+    $("#" + previousPage + "Link"),
+    "activepage",
+    $("#" + activePage + "Link")
+  );
 }
 
 //add another input field when user clicks to add a step
