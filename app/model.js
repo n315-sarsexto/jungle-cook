@@ -80,17 +80,7 @@ export function changePage(pageID, recipeID, callback) {
       //set variables for ingred and step count
       let ingCount = recipe[recipeID].ingredients.length
       let stepCount = recipe[recipeID].instructions.length
-      LISTENERS.initEditRecipeListener(ingCount, stepCount)
-    });
-  }
-  else {
-    $.get(`pages/${pageID}/${pageID}.html`, function (data) {
-      $("#app").html(data);
-      showEditRecipe(recipeID);
-      //set variables for ingred and step count
-      let ingCount = recipe[recipeID].ingredients.length
-      let stepCount = recipe[recipeID].instructions.length
-      LISTENERS.initEditRecipeListener(ingCount, stepCount)
+      APP.initEditRecipeListener(ingCount, stepCount)
     });
   }
   else {
