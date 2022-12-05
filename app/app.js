@@ -8,9 +8,10 @@ function changeRoute() {
   let hashTag = window.location.hash;
   let pageID = hashTag.replace("#", "");
   let viewID = hashTag.replace("#view/", "");
+  let editID = hashTag.replace("#edit/", "");
 
   
-  if (viewID == `#${pageID}` || pageID == ""){
+  if (viewID == `#${pageID}` && viewID == editID || pageID == ""){
     //check if pageID is blank to go to home.
     console.log("matach")
     if (pageID == "") {
@@ -26,11 +27,16 @@ function changeRoute() {
       updateNav(pageID);
     }
   }else{
-    console.log("nope");
-  
-      console.log(pageID)
+    console.log("no page");
+    console.log(viewID, editID)
+    if(editID == `#${pageID}`){
       MODEL.changePage("view", viewID);
-      // updateNav(pageID);
+    }
+    else{
+      console.log(editID)
+      MODEL.changePage("edit", editID);
+    }
+     
     
   }
   
@@ -44,13 +50,13 @@ function updateNav(pageID) {
   $("#menu #" + activePage + "Link").addClass("active-page");
   $("nav #" + activePage + "Link").addClass("active-page");
 
-  console.log(pageID);
-  console.log(
-    "previouspage",
-    $("#" + previousPage + "Link"),
-    "activepage",
-    $("#" + activePage + "Link")
-  );
+  // console.log(pageID);
+  // console.log(
+  //   "previouspage",
+  //   $("#" + previousPage + "Link"),
+  //   "activepage",
+  //   $("#" + activePage + "Link")
+  // );
 }
 
 //add another input field when user clicks to add a step
@@ -105,6 +111,29 @@ export function initRecipeListener() {
   })
 }
 
+export function initEditRecipeListener(ingredCount, stepCount) {
+    /* This is creating a new input field when the user clicks the add ingredient button. */
+    $("#addBtn").on("click", (e) => {
+      // console.log("Click!");
+      $(".ingredients").append(`
+          <input type="text" id="ingred${ingredCount}" placeholder="Ingredient #${
+        ingredCount + 1
+      }">`);
+      ingredCount++;
+    });
+  
+    /* This is creating a new input field when the user clicks the add step button. */
+    $("#addStepBtn").on("click", (e) => {
+      // console.log("Click!");
+      $(".instructions").append(`
+          <input type="text" id="step${stepCount}" placeholder="Step #${
+        stepCount + 1
+      }">`);
+      stepCount++;
+    });
+  
+}
+
 export function initPreviewListener() {
   //function is used to create a listener for the preview of a recipe
     $(".browse-recipe a").on("click", (e) => {
@@ -112,6 +141,8 @@ export function initPreviewListener() {
       changeRoute(e.target.id)
     })
 }
+
+
 
 //listen for the hashtag change
 function initNavListeners() {

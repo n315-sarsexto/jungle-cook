@@ -31,7 +31,18 @@ export function changePage(pageID, recipeID, callback) {
       displayRecipePreviews();
       LISTENERS.initPreviewListener();
     });
-  } else {
+  } else if (pageID == "edit") {
+    $.get(`pages/${pageID}/${pageID}.html`, function (data) {
+      //console.log("data " + data);
+      $("#app").html(data);
+      showEditRecipe(recipeID);
+      //set variables for ingred and step count
+      let ingCount = recipe[recipeID].ingredients.length
+      let stepCount = recipe[recipeID].instructions.length
+      LISTENERS.initEditRecipeListener(ingCount, stepCount)
+    });
+  }
+  else {
     $.get(`pages/${pageID}/${pageID}.html`, function (data) {
       //console.log("data " + data);
       $("#app").html(data);
@@ -41,7 +52,7 @@ export function changePage(pageID, recipeID, callback) {
 
 //function to display a recipe
 function displayRecipe(recipeID) {
-  console.log(recipe[recipeID])
+  //console.log(recipe[recipeID])
   //recipeID = 0;
   //use the JSON to append elements of the recipe to the HTML
   $("#recipeName").append(`<h5>${recipe[recipeID].name}</h5>`);
@@ -54,6 +65,8 @@ function displayRecipe(recipeID) {
 
   loopIngredients(recipeID);
   loopInstructions(recipeID);
+
+  $(".editButton").append(`<a href="#edit/${recipeID}"><button>Edit Recipe</button></a>`)
 }
 
 //generate preview cards for recipes
@@ -90,6 +103,38 @@ export function submitRecipe(newRecipe){
 
   //push it over to .json
   recipe.push(newRecipe)
+}
+
+export function showEditRecipe(id){
+  $("#recipe-name").val(recipe[id].name)
+  // $("#recipe-img").val(recipe[id]["recipe-img"])
+  $("#description").val(recipe[id].description)
+  $("#time").val(recipe[id].time)
+  $("#servings").val(recipe[id].servings)
+
+  //loop for ingredients and steps
+  for(let i = 0; i < recipe[id].ingredients.length; i++){
+      $(".ingredients").append(`
+      <input type="text" id="ingred${i}" value="${recipe[id].ingredients[i]}">`);
+  }
+  for(let i = 0; i < recipe[id].instructions.length; i++){
+    $(".instructions").append(`
+    <input type="text" id="step${i}" value="${recipe[id].instructions[i]}">`);
+  }
+  
+  // //handle submit
+  // $("#submitRecipeBtn").on("click", (e) => {
+  //   //array for ingred and steps
+  //   let ingreds = []
+  //   let steps = []
+
+  //   recipe[id].name = $("#recipe-name").val()
+  //   recipe[id].description = $("#description").val()
+  //   recipe[id].time = $("#time").val()
+  //   recipe[id].servings = $("#servings").val()
+
+
+  // })
 }
 
 //function to pull instructions, to be able to then add them to the recipe view
