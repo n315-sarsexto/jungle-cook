@@ -69,7 +69,6 @@ export function changePage(pageID, recipeID, callback) {
           "#recipes .recipes-display"
         );
         APP.initPreviewListener();
-        addUserFunctions();
       }
     });
   } else if (pageID == "edit") {
@@ -149,15 +148,17 @@ function displayRecipePreviews(content, location) {
             <div id="user-buttons">
             </div>
             </div>`);
+            addUserFunctions(content[i].id);
   }
+
 }
 
-function addUserFunctions() {
+function addUserFunctions(id) {
   $("#recipes #view-button").append(
-    `<button class="yellow-button">View</button>`
+    `<a href="#view/${id}"><button class="yellow-button">View</button></a>`
   );
   $("#recipes #user-buttons")
-    .append(`<button class="yellow-button user-button">Edit Recipe</button>
+    .append(`<a href="#edit/${id}"><button class="yellow-button user-button">Edit Recipe</button></a>
              <button class="yellow-button user-button">Delete</button>`);
 }
 
@@ -168,6 +169,14 @@ export function submitRecipe(newRecipe) {
 
   //push it over to .json
   recipe.push(newRecipe);
+
+  //give an alert
+  Swal.fire({
+    icon: 'success',
+    title: 'Your recipe has been created!',
+    showConfirmButton: false,
+    timer: 1500
+  })
 }
 export function editRecipe(editedRecipe) {
   let targetID = editedRecipe["id"]
@@ -179,7 +188,12 @@ export function editRecipe(editedRecipe) {
   recipe[targetID].ingredients = editedRecipe["ingredients"]
   recipe[targetID].instructions = editedRecipe["instructions"]
 
-  console.log(recipe[targetID])
+  Swal.fire({
+    icon: 'success',
+    title: 'Your recipe has been saved!',
+    showConfirmButton: false,
+    timer: 1500
+  })
 }
 
 export function showEditRecipe(id){
