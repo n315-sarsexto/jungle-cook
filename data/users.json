@@ -3,18 +3,21 @@
         "fname": "user",
         "lname": "user",
         "email": "user@iu.edu",
-        "password": "password"
+        "password": "password",
+        "userID": 0
     },
     {
         "fname": "Summer",
         "lname": "Sexton",
         "email": "summer@iu.edu",
-        "password": "adminone"
+        "password": "adminone",
+        "userID": 1
     },
     {
         "fname": "Kylee",
         "lname": "Dicken",
         "email": "kylee@iu.edu",
-        "password": "admintwo"
+        "password": "admintwo",
+        "userID": 2
     }
 ]

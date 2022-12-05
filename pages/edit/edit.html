@@ -6,22 +6,33 @@
     </div>
 
     <div class="details">
-        <!-- Value will be the loaded-in text -->
-        <input type="text" placeholder="Add Recipe Image">
-        <input type="text" placeholder="Recipe Name">
-        <input type="text" placeholder="Recipe Description">
-        <input type="text" placeholder="Recipe Total Time">
-        <input type="text" placeholder="Recipe Serving Size">
+        <input type="file" id="recipe-img" accept="image/*">
+        <input type="text" id="recipe-name" placeholder="Recipe Name">
+        <input type="text" id="description" placeholder="Recipe Description">
+        <input type="text" id="time" placeholder="Recipe Total Time">
+        <input type="text" id="servings" placeholder="Recipe Serving Size">
     </div>
 
-    <div id="ingredients">
+    <div class="ingredients">
+        <div id="addBtn">
+            <p>+</p>
+        </div>
         <h4>Enter Ingridients:</h4>
+        <input type="text" id="ingred0" placeholder="Ingredient #1">
+        <input type="text" id="ingred1" placeholder="Ingredient #2">
+        <input type="text" id="ingred2" placeholder="Ingredient #3">
     </div>
 
-    <div id="instructions">
+    <div class="instructions">
+        <div id="addStepBtn">
+            <p>+</p>
+        </div>
         <h4>Enter Instructions:</h4>
+        <input type="text" id="step0" placeholder="Step #1">
+        <input type="text" id="step1" placeholder="Step #2">
+        <input type="text" id="step2" placeholder="Step #3">
     </div>
 
-    <input type="submit" value="Submit Changes">
+    <div class="buttonCenter"><input type="submit" value="Edit Recipe" id="submitRecipeBtn"></div>
 
 </div>

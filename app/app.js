@@ -65,6 +65,32 @@ export function initRecipeListener() {
     }">`);
     stepCount++;
   });
+
+  $("#submitRecipeBtn").on("click", (e) => {
+    let newRecipe = {}
+    let ingredList = []
+    let stepList = []
+    newRecipe["name"] = $("#recipe-name").val()
+    newRecipe["recipe-img"] = $("#recipe-img").val()
+    newRecipe["description"] = $("#description").val()
+    newRecipe["time"] = $("#time").val()
+    newRecipe["servings"] = $("#servings").val()
+
+    //loop for ingredients and steps
+    for(let i = 0; i < ingredCount; i++){
+      var newIngred = $("#ingred"+i).val()
+      ingredList.push(newIngred)
+    }
+    for(let i = 0; i < stepCount; i++){
+      var newStep = $("#step"+i).val()
+      stepList.push(newStep)
+    }
+    //push them to the recipe obj after loops done
+    newRecipe["ingredients"] = ingredList;
+    newRecipe["instructions"] = stepList;
+
+    MODEL.submitRecipe(newRecipe)
+  })
 }
 
 export function initPreviewListener() {

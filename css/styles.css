@@ -409,23 +409,23 @@ nav .nav-menu:hover * {
     width: 100%;
   }
 }
-.createForm {
+.createForm, .editForm {
   width: 80%;
   min-height: 100vh;
   margin: 0 auto;
   padding-top: 210px;
   padding-bottom: 210px;
 }
-.createForm #greeting {
+.createForm #greeting, .editForm #greeting {
   font-size: 1.3em;
   font-family: Caveat;
   margin-bottom: 75px;
 }
-.createForm .details {
+.createForm .details, .editForm .details {
   width: 100%;
   position: relative;
 }
-.createForm .details input {
+.createForm .details input, .editForm .details input {
   display: block;
   width: 100%;
   height: 30px;
@@ -438,10 +438,10 @@ nav .nav-menu:hover * {
   border-bottom: 3px solid black;
   outline: none;
 }
-.createForm .details input[type=file] {
+.createForm .details input[type=file], .editForm .details input[type=file] {
   height: 40px;
 }
-.createForm .details input[type=file]::file-selector-button {
+.createForm .details input[type=file]::file-selector-button, .editForm .details input[type=file]::file-selector-button {
   cursor: pointer;
   width: 110px;
   height: 36px;
@@ -452,16 +452,16 @@ nav .nav-menu:hover * {
   font-size: 20px;
   float: right;
 }
-.createForm .instructions {
+.createForm .instructions, .editForm .instructions {
   width: 100%;
   position: relative;
 }
-.createForm .instructions h4 {
+.createForm .instructions h4, .editForm .instructions h4 {
   font-family: Lato;
   font-weight: normal;
   font-size: 20px;
 }
-.createForm .instructions #addStepBtn {
+.createForm .instructions #addStepBtn, .editForm .instructions #addStepBtn {
   z-index: 50;
   width: 50px;
   height: 50px;
@@ -477,11 +477,11 @@ nav .nav-menu:hover * {
   bottom: 5px;
   right: 5px;
 }
-.createForm .instructions #addStepBtn p {
+.createForm .instructions #addStepBtn p, .editForm .instructions #addStepBtn p {
   margin-bottom: 0px;
   z-index: 50;
 }
-.createForm .instructions input {
+.createForm .instructions input, .editForm .instructions input {
   display: block;
   width: 100%;
   height: 30px;
@@ -494,16 +494,16 @@ nav .nav-menu:hover * {
   border-bottom: 3px solid black;
   outline: none;
 }
-.createForm .ingredients {
+.createForm .ingredients, .editForm .ingredients {
   width: 100%;
   position: relative;
 }
-.createForm .ingredients h4 {
+.createForm .ingredients h4, .editForm .ingredients h4 {
   font-family: Lato;
   font-weight: normal;
   font-size: 20px;
 }
-.createForm .ingredients #addBtn {
+.createForm .ingredients #addBtn, .editForm .ingredients #addBtn {
   z-index: 50;
   width: 50px;
   height: 50px;
@@ -519,11 +519,11 @@ nav .nav-menu:hover * {
   bottom: 5px;
   right: 5px;
 }
-.createForm .ingredients #addBtn p {
+.createForm .ingredients #addBtn p, .editForm .ingredients #addBtn p {
   margin-bottom: 0px;
   z-index: 50;
 }
-.createForm .ingredients input {
+.createForm .ingredients input, .editForm .ingredients input {
   display: block;
   width: 100%;
   height: 30px;
@@ -536,11 +536,11 @@ nav .nav-menu:hover * {
   border-bottom: 3px solid black;
   outline: none;
 }
-.createForm .buttonCenter {
+.createForm .buttonCenter, .editForm .buttonCenter {
   margin: 0 auto;
   width: 430px;
 }
-.createForm .buttonCenter #submitRecipeBtn {
+.createForm .buttonCenter #submitRecipeBtn, .editForm .buttonCenter #submitRecipeBtn {
   width: 425px;
   height: 50px;
   border: none;
