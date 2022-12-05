@@ -10,8 +10,7 @@ function changeRoute() {
   let viewID = hashTag.replace("#view/", "");
   let editID = hashTag.replace("#edit/", "");
 
-  
-  if (viewID == `#${pageID}` && viewID == editID || pageID == ""){
+  if ((viewID == `#${pageID}` && viewID == editID) || pageID == "") {
     //check if pageID is blank to go to home.
     if (pageID == "") {
       MODEL.changePage("home");
@@ -25,18 +24,15 @@ function changeRoute() {
       MODEL.changePage(pageID);
       updateNav(pageID);
     }
-  }else{
+  } else {
     console.log("no page");
-    console.log(viewID, editID)
-    if(editID == `#${pageID}`){
+    console.log(viewID, editID);
+    if (editID == `#${pageID}`) {
       MODEL.changePage("view", viewID);
-    }
-    else{
-      console.log(editID)
+    } else {
+      console.log(editID);
       MODEL.changePage("edit", editID);
     }
-     
-    
   }
 }
 
@@ -75,53 +71,52 @@ export function initRecipeListener() {
   });
 
   $("#submitRecipeBtn").on("click", (e) => {
-    let newRecipe = {}
-    let ingredList = []
-    let stepList = []
-    newRecipe["name"] = $("#recipe-name").val()
-    newRecipe["recipe-img"] = $("#recipe-img").val()
-    newRecipe["description"] = $("#description").val()
-    newRecipe["time"] = $("#time").val()
-    newRecipe["servings"] = $("#servings").val()
+    let newRecipe = {};
+    let ingredList = [];
+    let stepList = [];
+    newRecipe["name"] = $("#recipe-name").val();
+    newRecipe["recipe-img"] = $("#recipe-img").val();
+    newRecipe["description"] = $("#description").val();
+    newRecipe["time"] = $("#time").val();
+    newRecipe["servings"] = $("#servings").val();
 
     //loop for ingredients and steps
-    for(let i = 0; i < ingredCount; i++){
-      var newIngred = $("#ingred"+i).val()
-      ingredList.push(newIngred)
+    for (let i = 0; i < ingredCount; i++) {
+      var newIngred = $("#ingred" + i).val();
+      ingredList.push(newIngred);
     }
-    for(let i = 0; i < stepCount; i++){
-      var newStep = $("#step"+i).val()
-      stepList.push(newStep)
+    for (let i = 0; i < stepCount; i++) {
+      var newStep = $("#step" + i).val();
+      stepList.push(newStep);
     }
     //push them to the recipe obj after loops done
     newRecipe["ingredients"] = ingredList;
     newRecipe["instructions"] = stepList;
 
-    MODEL.submitRecipe(newRecipe)
-  })
+    MODEL.submitRecipe(newRecipe);
+  });
 }
 
 export function initEditRecipeListener(ingredCount, stepCount) {
-    /* This is creating a new input field when the user clicks the add ingredient button. */
-    $("#addBtn").on("click", (e) => {
-      // console.log("Click!");
-      $(".ingredients").append(`
+  /* This is creating a new input field when the user clicks the add ingredient button. */
+  $("#addBtn").on("click", (e) => {
+    // console.log("Click!");
+    $(".ingredients").append(`
           <input type="text" id="ingred${ingredCount}" placeholder="Ingredient #${
-        ingredCount + 1
-      }">`);
-      ingredCount++;
-    });
-  
-    /* This is creating a new input field when the user clicks the add step button. */
-    $("#addStepBtn").on("click", (e) => {
-      // console.log("Click!");
-      $(".instructions").append(`
+      ingredCount + 1
+    }">`);
+    ingredCount++;
+  });
+
+  /* This is creating a new input field when the user clicks the add step button. */
+  $("#addStepBtn").on("click", (e) => {
+    // console.log("Click!");
+    $(".instructions").append(`
           <input type="text" id="step${stepCount}" placeholder="Step #${
-        stepCount + 1
-      }">`);
-      stepCount++;
-    });
-  
+      stepCount + 1
+    }">`);
+    stepCount++;
+  });
 }
 
 export function initPreviewListener() {
@@ -177,10 +172,24 @@ function checkFormData(form, callback) {
 
     retrievedForm[1].forEach((error, id) => {
       let errorText = `<b>` + error.replace("-", " ") + `</b>`;
-      if (id != retrievedForm[1].length - 1) {
-        errorStr = errorStr + errorText + ", ";
-      } else {
-        errorStr = errorStr + "and " + errorText;
+
+      switch (retrievedForm[1].length) {
+        case 1:
+          errorStr = errorText;
+          break;
+        case 2:
+          if (id != retrievedForm[1].length - 1) {
+            errorStr = errorStr + errorText;
+          } else {
+            errorStr = errorStr + " and " + errorText;
+          }
+          break;
+        default:
+          if (id != retrievedForm[1].length - 1) {
+            errorStr = errorStr + errorText + ", ";
+          } else {
+            errorStr = errorStr + "and " + errorText;
+          }
       }
     });
 
@@ -189,11 +198,11 @@ function checkFormData(form, callback) {
       html:
         "All data fields must be filled. Please complete the " +
         errorStr +
-        " fields.",
+        " field(s).",
       customClass: {
         container: "padding: 40px",
         confirmButton:
-          "font-family: Lato; background-color: $jungle-yellow: #FFD972;; border: none;",
+          "font-family: Lato; background-color: #FFD972; border: none;",
         htmlContainer: "font-family: Lato",
       },
     });
@@ -204,6 +213,7 @@ function checkFormData(form, callback) {
 
 function signup(data) {
   let isUniqueUser = true;
+  let userData = data;
 
   MODEL.users.forEach((user) => {
     if (user.email == data.email) {
@@ -218,12 +228,15 @@ function signup(data) {
       customClass: {
         container: "padding: 40px",
         confirmButton:
-          "font-family: Lato; background-color: $jungle-yellow: #FFD972;; border: none;",
+          "font-family: Lato; background-color: #FFD972; border: none;",
         htmlContainer: "font-family: Lato",
       },
     });
   } else {
+    userData.id = MODEL.users.length;
+    userData.recipes = [];
     MODEL.users.push(data);
+    console.log(MODEL.users);
     MODEL.setCurrentUser(MODEL.users.length - 1);
     console.log(MODEL.currentUser);
     userLoggedIn();
@@ -238,7 +251,6 @@ function login(data) {
 
   MODEL.users.forEach((user, id) => {
     if (user.email == data.email && user.password == data.password) {
-      console.log("log");
       MODEL.setCurrentUser(id);
       userLoggedIn();
 
@@ -275,20 +287,6 @@ function userLoggedIn() {
   $(".show-with-user").each(function () {
     $(this).css("display", "");
   });
-
-  //ERROR:
-  //cant get on click to apply to both buttons with a shared class or id
-
-  // console.log($("#logoutButton1"));
-  // $("#logoutButton1").on("click", (e) => {
-  //   console.log("click");
-  //   userLoggedOut();
-  // });
-  // console.log($("#logoutButton2"));
-  // $("#logoutButton2").on("click", (e) => {
-  //   console.log("click");
-  //   userLoggedOut();
-  // });
 
   window.location.hash = "#recipes";
   changeRoute();

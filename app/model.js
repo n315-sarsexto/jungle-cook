@@ -6,6 +6,7 @@ import recipe from "../data/recipes.json" assert { type: "json" };
 //variables
 export var users = [
   {
+    id: 0,
     "first-name": "admin",
     "last-name": "user",
     email: "admin@junglecook.com",
@@ -78,12 +79,11 @@ export function changePage(pageID, recipeID, callback) {
       $("#app").html(data);
       showEditRecipe(recipeID);
       //set variables for ingred and step count
-      let ingCount = recipe[recipeID].ingredients.length
-      let stepCount = recipe[recipeID].instructions.length
-      APP.initEditRecipeListener(ingCount, stepCount)
+      let ingCount = recipe[recipeID].ingredients.length;
+      let stepCount = recipe[recipeID].instructions.length;
+      APP.initEditRecipeListener(ingCount, stepCount);
     });
-  }
-  else {
+  } else {
     $.get(`pages/${pageID}/${pageID}.html`, function (data) {
       $("#app").html(data);
     });
@@ -114,7 +114,9 @@ function displayRecipe(recipeID) {
   loopIngredients(recipeID);
   loopInstructions(recipeID);
 
-  $(".editButton").append(`<a href="#edit/${recipeID}"><button>Edit Recipe</button></a>`)
+  $(".editButton").append(
+    `<a href="#edit/${recipeID}"><button>Edit Recipe</button></a>`
+  );
 }
 
 //generate preview cards for recipes
@@ -170,23 +172,23 @@ export function submitRecipe(newRecipe) {
   recipe.push(newRecipe);
 }
 
-export function showEditRecipe(id){
-  $("#recipe-name").val(recipe[id].name)
+export function showEditRecipe(id) {
+  $("#recipe-name").val(recipe[id].name);
   // $("#recipe-img").val(recipe[id]["recipe-img"])
-  $("#description").val(recipe[id].description)
-  $("#time").val(recipe[id].time)
-  $("#servings").val(recipe[id].servings)
+  $("#description").val(recipe[id].description);
+  $("#time").val(recipe[id].time);
+  $("#servings").val(recipe[id].servings);
 
   //loop for ingredients and steps
-  for(let i = 0; i < recipe[id].ingredients.length; i++){
-      $(".ingredients").append(`
+  for (let i = 0; i < recipe[id].ingredients.length; i++) {
+    $(".ingredients").append(`
       <input type="text" id="ingred${i}" value="${recipe[id].ingredients[i]}">`);
   }
-  for(let i = 0; i < recipe[id].instructions.length; i++){
+  for (let i = 0; i < recipe[id].instructions.length; i++) {
     $(".instructions").append(`
     <input type="text" id="step${i}" value="${recipe[id].instructions[i]}">`);
   }
-  
+
   // //handle submit
   // $("#submitRecipeBtn").on("click", (e) => {
   //   //array for ingred and steps
@@ -197,7 +199,6 @@ export function showEditRecipe(id){
   //   recipe[id].description = $("#description").val()
   //   recipe[id].time = $("#time").val()
   //   recipe[id].servings = $("#servings").val()
-
 
   // })
 }
