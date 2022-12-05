@@ -1,7 +1,6 @@
 [
     {
         "id": 0,
-        "authorID": 0,
         "name": "Supreme Pizza",
         "recipe-img": "recipe-pizza.jpg",
         "time": "1 h 24 min",
@@ -12,7 +11,6 @@
     },
     {
         "id": 1,
-        "authorID": 0,
         "name": "Classic Burger",
         "recipe-img": "recipe-burger.jpg",
         "time": "30 min",
@@ -23,7 +21,6 @@
     },
     {
         "id": 2,
-        "authorID": 0,
         "name": "Chicken Biryani",
         "recipe-img": "recipe-pilaf.jpg",
         "time": "1 h 15 min",
@@ -34,7 +31,6 @@
     },
     {
         "id": 3,
-        "authorID": 0,
         "name": "Ch. Chow Mein",
         "recipe-img": "recipe-chowmein.jpg",
         "time": "20 min",
