@@ -83,24 +83,13 @@ function displayRecipePreviews() {
   }
 }
 
-{
-  /* <div class="recipe" id="view${i}">
-<div class="recipeImg">
-    <img src="images/${recipe[i]["recipe-img"]}">
-</div>
-<div class="recipeDetails">
-    <h1>${recipe[i].name}</h1>
-    <p>${recipe[i].description}</p>
-    <div class="time">
-        <img src="images/time.svg">
-        <p>${recipe[i].time}</p>
-    </div>
-    <div class="servings">
-        <img src="images/servings.svg">
-        ${recipe[i].servings}
-    </div>
-</div>
-</div> */
+//function to upload a recipe
+export function submitRecipe(newRecipe){
+  //set the id of the new recipe
+  newRecipe["id"] = recipe.length
+
+  //push it over to .json
+  recipe.push(newRecipe)
 }
 
 //function to pull instructions, to be able to then add them to the recipe view
