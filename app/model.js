@@ -100,16 +100,6 @@ function logoutListeners() {
   });
 }
 
-function logoutListeners() {
-  $(".logoutButton").each(function () {
-    console.log("logout button", $(this));
-    $(this).on("click", (e) => {
-      console.log("click");
-      userLoggedOut();
-    });
-  });
-}
-
 //function to display a recipe
 function displayRecipe(recipeID) {
   //use the JSON to append elements of the recipe to the HTML
