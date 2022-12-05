@@ -105,7 +105,7 @@ function displayRecipe(recipeID) {
   //use the JSON to append elements of the recipe to the HTML
   $("#recipeName").append(`<h5>${recipe[recipeID].name}</h5>`);
   $("#recipeImage").append(
-    `<img src="images/${recipe[recipeID]["recipe-img"]}">`
+    `<img src="${recipe[recipeID]["recipe-img"]}">`
   );
   $("#recipeDescription").append(`<p>${recipe[recipeID].description}</p>`);
   $("#recipeTime").append(`<p>${recipe[recipeID].time}</p>`);
@@ -124,7 +124,7 @@ function displayRecipePreviews(content, location) {
     $(location).append(`
             <div class="display-recipe" id="${content[i].id}">
             <div class="recipe-content">
-            <div class="recipe-view-img" style="background-image: url(images/${
+            <div class="recipe-view-img" style="background-image: url(${
               recipe[content[i].id]["recipe-img"]
             })"><div id="view-button"></div></div>
             <div class="recipe-view-details">
@@ -169,10 +169,25 @@ export function submitRecipe(newRecipe) {
   //push it over to .json
   recipe.push(newRecipe);
 }
+export function editRecipe(editedRecipe) {
+  let targetID = editedRecipe["id"]
+  recipe[targetID].name = editedRecipe["name"]
+  recipe[targetID]["recipe-img"] = editedRecipe["recipe-img"]
+  recipe[targetID].description = editedRecipe["description"]
+  recipe[targetID].time = editedRecipe["time"]
+  recipe[targetID].servings = editedRecipe["servings"]
+  recipe[targetID].ingredients = editedRecipe["ingredients"]
+  recipe[targetID].instructions = editedRecipe["instructions"]
+
+  console.log(recipe[targetID])
+}
 
 export function showEditRecipe(id){
+  //append a hidden id form for later use
+  $(".details").append(`<input type="hidden" value="${id}" id="id">`)
+  //go about the rest of it
   $("#recipe-name").val(recipe[id].name)
-  // $("#recipe-img").val(recipe[id]["recipe-img"])
+  $("#recipe-img").val(recipe[id]["recipe-img"])
   $("#description").val(recipe[id].description)
   $("#time").val(recipe[id].time)
   $("#servings").val(recipe[id].servings)
