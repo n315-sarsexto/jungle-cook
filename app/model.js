@@ -1,35 +1,76 @@
-import * as LISTENERS from "./app.js";
+import * as APP from "./app.js";
 
 //import JSON as this is where data is modified
 import recipe from "../data/recipes.json" assert { type: "json" };
 
+//variables
+export var users = [
+  {
+    "first-name": "admin",
+    "last-name": "user",
+    email: "admin@junglecook.com",
+    password: "password",
+    recipes: [{ id: 1 }],
+  },
+];
+export var currentUser = null;
+
+export function setCurrentUser(userID) {
+  currentUser = userID;
+  console.log(currentUser);
+}
+
 //basic change page function
 export function changePage(pageID, recipeID, callback) {
-  //console.log(recipe);
+  $(".logoutButton").each(function () {
+    console.log("logout button", $(this));
+    $(this).on("click", (e) => {
+      console.log("click");
+      APP.userLoggedOut();
+    });
+  });
+
   //if the page ID is nothing, go to the home page. otherwise, go to whatever page it is.
   if (pageID == "") {
     $.get(`pages/home/home.html`, function (data) {
-      //console.log("data " + data);
       $("#app").html(data);
     });
   } else if (pageID == "create") {
     $.get(`pages/create/create.html`, function (data) {
-      //console.log("data " + data);
       $("#app").html(data);
-      LISTENERS.initRecipeListener();
+      APP.initRecipeListener();
+    });
+  } else if (pageID == "login") {
+    $.get(`pages/${pageID}/${pageID}.html`, function (data) {
+      $("#app").html(data);
+      APP.accountListeners();
     });
   } else if (pageID == "view") {
     $.get(`pages/view/view.html`, function (data) {
-      //console.log("data " + data);
       $("#app").html(data);
       displayRecipe(recipeID);
     });
   } else if (pageID == "browse") {
     $.get(`pages/${pageID}/${pageID}.html`, function (data) {
-      //console.log("data " + data);
       $("#app").html(data);
-      displayRecipePreviews();
-      LISTENERS.initPreviewListener();
+      displayRecipePreviews(recipe, "#browse .recipes-display");
+      APP.initPreviewListener();
+    });
+  } else if (pageID == "recipes") {
+    $.get(`pages/${pageID}/${pageID}.html`, function (data) {
+      console.log(currentUser);
+      if (currentUser == null) {
+        APP.error("Error: User not found. Please login to continue", "login");
+      } else {
+        $("#app").html(data);
+        $("#name-user span").html(users[currentUser]);
+        displayRecipePreviews(
+          users[currentUser].recipes,
+          "#recipes .recipes-display"
+        );
+        APP.initPreviewListener();
+        addUserFunctions();
+      }
     });
   } else if (pageID == "edit") {
     $.get(`pages/${pageID}/${pageID}.html`, function (data) {
@@ -44,16 +85,43 @@ export function changePage(pageID, recipeID, callback) {
   }
   else {
     $.get(`pages/${pageID}/${pageID}.html`, function (data) {
-      //console.log("data " + data);
+      $("#app").html(data);
+      showEditRecipe(recipeID);
+      //set variables for ingred and step count
+      let ingCount = recipe[recipeID].ingredients.length
+      let stepCount = recipe[recipeID].instructions.length
+      LISTENERS.initEditRecipeListener(ingCount, stepCount)
+    });
+  }
+  else {
+    $.get(`pages/${pageID}/${pageID}.html`, function (data) {
       $("#app").html(data);
     });
   }
 }
 
+function logoutListeners() {
+  $(".logoutButton").each(function () {
+    console.log("logout button", $(this));
+    $(this).on("click", (e) => {
+      console.log("click");
+      userLoggedOut();
+    });
+  });
+}
+
+function logoutListeners() {
+  $(".logoutButton").each(function () {
+    console.log("logout button", $(this));
+    $(this).on("click", (e) => {
+      console.log("click");
+      userLoggedOut();
+    });
+  });
+}
+
 //function to display a recipe
 function displayRecipe(recipeID) {
-  //console.log(recipe[recipeID])
-  //recipeID = 0;
   //use the JSON to append elements of the recipe to the HTML
   $("#recipeName").append(`<h5>${recipe[recipeID].name}</h5>`);
   $("#recipeImage").append(
@@ -70,39 +138,56 @@ function displayRecipe(recipeID) {
 }
 
 //generate preview cards for recipes
-function displayRecipePreviews() {
+function displayRecipePreviews(content, location) {
   //append a new preview card for each item in recipe array
-  for (let i = 0; i < recipe.length; i++) {
-    //console.log(recipe[i]);
-    $(".browse-recipes").append(`
-            <div class="browse-recipe" id="${i}">
-            <div class="browse-recipe-img" style="background-image: url(images/${recipe[i]["recipe-img"]})">
-            </div>
-            <div class="browse-recipe-details">
-                <a id="${i}" href="#view/${i}" class="recipe-details-title">${recipe[i].name}</a>
-                <p class="recipe-details-desc">${recipe[i].description}</p>
+  for (let i = 0; i < content.length; i++) {
+    $(location).append(`
+            <div class="display-recipe" id="${content[i].id}">
+            <div class="recipe-content">
+            <div class="recipe-view-img" style="background-image: url(images/${
+              recipe[content[i].id]["recipe-img"]
+            })"><div id="view-button"></div></div>
+            <div class="recipe-view-details">
+                <a id="${i}" href="#view/${i}" class="recipe-details-title">${
+      recipe[content[i].id].name
+    }</a>
+                <p class="recipe-details-desc">${
+                  recipe[content[i].id].description
+                }</p>
                 <table class="recipe-details-info">
                     <tr class="recipe-time icon-text">
                         <td><img src="images/time.svg"></td>
-                        <td>${recipe[i].time}</td>
+                        <td>${recipe[content[i].id].time}</td>
                     </tr>
                     <tr class="recipe-servings icon-text">
                         <td><img src="images/servings.svg"></td>
-                        <td>${recipe[i].servings} servings</td>
+                        <td>${recipe[content[i].id].servings} servings</td>
                     </tr>
                 </table>
+            </div>
+            </div>
+            <div id="user-buttons">
             </div>
             </div>`);
   }
 }
 
+function addUserFunctions() {
+  $("#recipes #view-button").append(
+    `<button class="yellow-button">View</button>`
+  );
+  $("#recipes #user-buttons")
+    .append(`<button class="yellow-button user-button">Edit Recipe</button>
+             <button class="yellow-button user-button">Delete</button>`);
+}
+
 //function to upload a recipe
-export function submitRecipe(newRecipe){
+export function submitRecipe(newRecipe) {
   //set the id of the new recipe
-  newRecipe["id"] = recipe.length
+  newRecipe["id"] = recipe.length;
 
   //push it over to .json
-  recipe.push(newRecipe)
+  recipe.push(newRecipe);
 }
 
 export function showEditRecipe(id){
