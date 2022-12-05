@@ -31,10 +31,14 @@
             </svg>
             <a id="homeLink" href="#home">Home</a>
             <a id="browseLink" href="#browse">Browse</a>
-            <a id="createLink" href="#create">Create Recipe</a>
-            <a href="#login" class="login-button">
+            <a id="createLink" style="display: none;" class="show-with-user" href="#create">Create Recipe</a>
+            <a id="yourLink" style="display: none;" class="show-with-user" href="#recipes">Your Recipes</a>
+            <a href="#login" class="yellow-button show-with-login">
                 <span>Login</span>
             </a>
+            <button id="logoutButton" style="display: none;" class="yellow-button show-with-user logoutButton">
+                <span>Logout</span>
+            </button>
         </div>
         <div id="offMenu" class="menu-offclick">
 
@@ -64,10 +68,14 @@
         <div class="nav-links links">
             <a id="homeLink" href="#home">Home</a>
             <a id="browseLink" href="#browse">Browse</a>
-            <a id="createLink" href="#create">Create Recipe</a>
-            <a href="#login" class="login-button">
+            <a id="createLink" style="display: none;" class="show-with-user" href="#create">Create Recipe</a>
+            <a id="yourLink" style="display: none;" class="show-with-user" href="#recipes">Your Recipes</a>
+            <a href="#login" class="yellow-button show-with-login logoutButton">
                 <span>Login</span>
             </a>
+            <button id="logoutButton" style="display: none;" class="yellow-button show-with-user logoutButton">
+                <span>Logout</span>
+            </button>
         </div>
         <button id="menuButton" class="nav-menu">
             <svg class="svg-icon" viewBox="0 0 20 20">
@@ -89,7 +97,7 @@
         <div class="footer-links">
             <a href="#">Recipes by Categories</a>
             <a href="#">Privacy and Copyright</a>
-            <a href="#login">Login</a>
+            <a href="#login" class="show-with-login">Login</a>
             <!-- <a href="#create">Create Recipe</a> -->
             <!-- <a href="">Your Recipe</a> -->
         </div>
@@ -104,6 +112,7 @@
     </footer>
 
     <script src="lib/jquery.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="app/model.js" type="module"></script>
     <script src="app/app.js" type="module"></script>
 </body>

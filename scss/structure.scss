@@ -42,13 +42,15 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 @font-face {
-    font-family: 'GillSans-L';
-    src: url(../lib/fonts/GillSans-Light.ttf);
+    font-family: 'Lato-B';
+    src: url(../lib/fonts/Lato/Lato-Black.ttf);
 }
 
-.login-button {
+.yellow-button {
     height: 50px;
-    padding: 10px 50px;
+    width: fit-content;
+    min-width: 140px;
+    padding: 10px 20px;
 
     display: flex;
     align-items: center;
@@ -63,10 +65,11 @@ h1, h2, h3, h4, h5, h6, p {
     box-shadow: $shadow;
 
     * {
-        padding: 20px 50px;
+        padding: 20px 40px;
     }
 }
 
-.login-button:hover {
+.yellow-button:hover {
     background-color: $jungle-yellow-x;
 }
+

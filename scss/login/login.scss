@@ -11,31 +11,55 @@
 
     background-color: $jungle-yellow;
 
+    p {
+        font-family: $copyfont-i;
+    }
+
     h2 {
+        font-size: $xxlarge;
+        font-family: $copyfont-b;
         margin-bottom: 60px;
     }
 
-    .form {
+    .form-container {
+        // width: min(200px, 30%);
         width: 30%;
+        min-width: 200px;
         display: flex;
+        align-items: center;
         justify-content: center;
         flex-direction: column;
+
+        .form {
+            width: 100%;
+
+            input {
+                width: 100%;
+                padding: 5px;
+                margin-bottom: 50px;
+        
+                color: #000;
+                font-family: $copyfont;
+        
+                border: none;
+                border-bottom: 3px solid #000;
+                background-color: transparent;
+            }
+        
+            input ::placeholder {
+                color: #000;
+                opacity: 1;
+            }
+        } 
     }
+}
 
-    .form input {
-        padding: 5px;
-        margin-bottom: 50px;
+@media screen and (max-width: 800px) {
+    #login {
+        flex-direction: column;
 
-        color: #000;
-        font-family: $copyfont;
-
-        border: none;
-        border-bottom: 3px solid #000;
-        background-color: transparent;
-    }
-
-    .form input ::placeholder {
-        color: #000;
-        opacity: 1;
+        .form-container {
+            margin: 60px 0;
+        }
     }
 }
