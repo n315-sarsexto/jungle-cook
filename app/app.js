@@ -115,42 +115,38 @@ export function initEditRecipeListener(ingredCount, stepCount) {
     $(".instructions").append(`
           <input type="text" id="step${stepCount}" placeholder="Step #${
       stepCount + 1
-    }">`);
+    }`);
     stepCount++;
   });
-        stepCount + 1
-      }">`);
-      stepCount++;
-    });
-  
-    $(".editForm #submitRecipeBtn").on("click", (e) => {
-      //set base variables
-    let editedRecipe = {}
-    let ingredList = []
-    let stepList = []
 
-    editedRecipe["id"] = $("#id").val()
-    editedRecipe["name"] = $("#recipe-name").val()
-    editedRecipe["recipe-img"] = $("#recipe-img").val()
-    editedRecipe["description"] = $("#description").val()
-    editedRecipe["time"] = $("#time").val()
-    editedRecipe["servings"] = $("#servings").val()
+  $(".editForm #submitRecipeBtn").on("click", (e) => {
+    //set base variables
+    let editedRecipe = {};
+    let ingredList = [];
+    let stepList = [];
+
+    editedRecipe["id"] = $("#id").val();
+    editedRecipe["name"] = $("#recipe-name").val();
+    editedRecipe["recipe-img"] = $("#recipe-img").val();
+    editedRecipe["description"] = $("#description").val();
+    editedRecipe["time"] = $("#time").val();
+    editedRecipe["servings"] = $("#servings").val();
 
     //loop for ingredients and steps
-    for(let i = 0; i < ingredCount; i++){
-      var newIngred = $("#ingred"+i).val()
-      ingredList.push(newIngred)
+    for (let i = 0; i < ingredCount; i++) {
+      var newIngred = $("#ingred" + i).val();
+      ingredList.push(newIngred);
     }
-    for(let i = 0; i < stepCount; i++){
-      var newStep = $("#step"+i).val()
-      stepList.push(newStep)
+    for (let i = 0; i < stepCount; i++) {
+      var newStep = $("#step" + i).val();
+      stepList.push(newStep);
     }
     //push them to the recipe obj after loops done
     editedRecipe["ingredients"] = ingredList;
     editedRecipe["instructions"] = stepList;
 
-    MODEL.editRecipe(editedRecipe)
-    })
+    MODEL.editRecipe(editedRecipe);
+  });
 }
 
 export function initPreviewListener() {
