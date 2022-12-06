@@ -196,14 +196,6 @@ export function editRecipe(editedRecipe) {
 }
 
 export function showEditRecipe(id) {
-  $("#recipe-name").val(recipe[id].name);
-  // $("#recipe-img").val(recipe[id]["recipe-img"])
-  $("#description").val(recipe[id].description);
-  $("#time").val(recipe[id].time);
-  $("#servings").val(recipe[id].servings);
-}
-
-export function showEditRecipe(id) {
   //append a hidden id form for later use
   $(".details").append(`<input type="hidden" value="${id}" id="id">`);
   //go about the rest of it
