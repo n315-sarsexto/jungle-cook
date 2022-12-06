@@ -1,9 +1,8 @@
 [
     {
         "id": 0,
-        "authorID": 0,
         "name": "Supreme Pizza",
-        "recipe-img": "recipe-pizza.jpg",
+        "recipe-img": "images/recipe-pizza.jpg",
         "time": "1 h 24 min",
         "description": "Make pizza night super duper out of this world with homemade pizza. This recipe is supreme with vegetables and two types of meat. Yum!",
         "servings": 4,
@@ -12,9 +11,8 @@
     },
     {
         "id": 1,
-        "authorID": 0,
         "name": "Classic Burger",
-        "recipe-img": "recipe-burger.jpg",
+        "recipe-img": "images/recipe-burger.jpg",
         "time": "30 min",
         "description": "Sink your teeth into a delicious restaurant-style, hamburger recipe made from lean beef. Skip the prepackaged patties and take the extra time to craft up your own, and that little extra effort will be worth it.",
         "servings": 4,
@@ -23,9 +21,8 @@
     },
     {
         "id": 2,
-        "authorID": 0,
         "name": "Chicken Biryani",
-        "recipe-img": "recipe-pilaf.jpg",
+        "recipe-img": "images/recipe-pilaf.jpg",
         "time": "1 h 15 min",
         "description": "Chicken Biryani is a bold and flavorful Indian dish with crazy tender bites of chicken with bell peppers in a deliciously spiced and fragrant rice.",
         "servings": 6,
@@ -34,9 +31,8 @@
     },
     {
         "id": 3,
-        "authorID": 0,
         "name": "Ch. Chow Mein",
-        "recipe-img": "recipe-chowmein.jpg",
+        "recipe-img": "images/recipe-chowmein.jpg",
         "time": "20 min",
         "description": "A great Chow Mein comes down to the sauce - it takes more than just soy sauce and sugar! Jam packed with a surprising amount of hidden vegetables, customize this Chicken Chow Mein recipe using your protein of choice!",
         "servings": 4,
