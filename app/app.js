@@ -157,6 +157,12 @@ export function initPreviewListener() {
   });
 }
 
+export function initDeleteListener(){
+  $(".delete").on("click", (e) => {
+    MODEL.deleteRecipe(e.target.id)
+  })
+}
+
 //listen for the hashtag change
 function initNavListeners() {
   $(window).on("hashchange", () => {

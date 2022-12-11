@@ -3,11 +3,11 @@
 [X] Create Recipe
 [X] View Recipe
 [X] Edit Recipe
-[] Delete Recipe
 [X] JSON Structure
-[] Data of Your Recipe
 [X] Image Upload
-[] Mobile Responsiveness
+[X] Delete Recipe
+[X] Data of Your Recipe
+[X] Mobile Responsiveness
 
 ## Kylee's Portion
 

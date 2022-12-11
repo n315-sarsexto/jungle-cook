@@ -554,6 +554,14 @@ nav .nav-menu:hover * {
   font-size: 1.3em;
 }
 
+@media screen and (max-width: 425px) {
+  .createForm .buttonCenter, .editForm .buttonCenter {
+    width: 100%;
+  }
+  .createForm .buttonCenter #submitRecipeBtn, .editForm .buttonCenter #submitRecipeBtn {
+    width: 100%;
+  }
+}
 .recipeDetails {
   width: 80%;
   margin: 0 auto;
@@ -625,6 +633,31 @@ nav .nav-menu:hover * {
   font-size: 20px;
 }
 
+@media screen and (max-width: 768px) {
+  .recipeDetails {
+    width: 60%;
+  }
+  .recipeDetails #recipeName {
+    top: 22em;
+    left: -10em;
+  }
+  .recipeDetails .recipeOverview {
+    flex-direction: column;
+  }
+  .recipeDetails .recipeOverview #recipeImage {
+    height: 420px;
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 58px;
+  }
+  .recipeDetails .recipeOverview #recipeImage img {
+    height: 100%;
+    width: auto;
+  }
+  .recipeDetails .recipeOverview .aboutRecipe {
+    width: 100%;
+  }
+}
 footer {
   width: 100%;
   display: flex;

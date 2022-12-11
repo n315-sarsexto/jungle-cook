@@ -39,6 +39,7 @@ export function changePage(pageID, recipeID, callback) {
   } else if (pageID == "create") {
     $.get(`pages/create/create.html`, function (data) {
       $("#app").html(data);
+      creatorName();
       APP.initRecipeListener();
     });
   } else if (pageID == "login") {
@@ -70,6 +71,7 @@ export function changePage(pageID, recipeID, callback) {
           "#recipes .recipes-display"
         );
         APP.initPreviewListener();
+        APP.initDeleteListener();
       }
     });
   } else if (pageID == "edit") {
@@ -153,12 +155,22 @@ function displayRecipePreviews(content, location) {
 }
 
 function addUserFunctions(id) {
+  if(currentUser != null){
+    $("#recipes #name-user").html(users[currentUser]["first-name"])
+  }
   $("#recipes #view-button").append(
     `<a href="#view/${id}"><button class="yellow-button">View</button></a>`
   );
   $("#recipes #user-buttons")
     .append(`<a href="#edit/${id}"><button class="yellow-button user-button">Edit Recipe</button></a>
-             <button class="yellow-button user-button">Delete</button>`);
+             <button id="${id}" class="yellow-button user-button delete">Delete</button>`);
+}
+
+//change the name for creating a recipe
+function creatorName(){
+  if(currentUser != null){
+    $("#greeting #name-user").html(users[currentUser]["first-name"])
+  }
 }
 
 //function to upload a recipe
@@ -169,6 +181,9 @@ export function submitRecipe(newRecipe) {
   //push it over to .json
   recipe.push(newRecipe);
 
+  //push the id to the recipe array for the user
+  users[currentUser].recipes.push({"id": newRecipe["id"]})
+
   //give an alert
   Swal.fire({
     icon: "success",
@@ -176,6 +191,8 @@ export function submitRecipe(newRecipe) {
     showConfirmButton: false,
     timer: 1500,
   });
+
+  window.location.hash = "#recipes";
 }
 export function editRecipe(editedRecipe) {
   let targetID = editedRecipe["id"];
@@ -242,4 +259,23 @@ function loopIngredients(recipeID) {
   for (let i = 0; i < recipe[recipeID].ingredients.length; i++) {
     $("#ingredients").append(`<p>${recipe[recipeID].ingredients[i]}</p>`);
   }
+}
+
+//delete recipe
+export function deleteRecipe(recipeID){
+  //remove singular recipe
+  recipe.splice(recipeID, 1);
+
+  //delete from user's recipes
+  const indexOfObject = users[currentUser].recipes.findIndex(object => {
+    return object.id === recipeID;
+  });
+  console.log(indexOfObject);  
+  users[currentUser].recipes.splice(indexOfObject, 1);
+
+  //feedback
+  Swal.fire("Recipe has been deleted.");
+
+  //change window location
+  changePage("recipes")
 }

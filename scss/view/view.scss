@@ -73,3 +73,29 @@
         font-size: 20px;
     }
 }
+@media screen and (max-width: 768px) {
+    .recipeDetails{
+        width: 60%;
+
+        #recipeName{
+            top: 22em;
+            left: -10em;
+        }
+        .recipeOverview{
+            flex-direction: column;
+            #recipeImage{
+                height: 420px;
+                width: 100%;
+                overflow: hidden;
+                margin-bottom: 58px;
+                img{
+                    height: 100%;
+                    width: auto;
+                }
+            }
+            .aboutRecipe{
+                width: 100%;
+            }
+        }
+    }
+}

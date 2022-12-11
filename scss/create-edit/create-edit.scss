@@ -149,3 +149,14 @@
     }
 
 }
+
+@media screen and (max-width: 425px) {
+    .createForm, .editForm{
+        .buttonCenter{
+            width: 100%;
+            #submitRecipeBtn{
+                width: 100%;
+            }
+        }
+    }
+}
