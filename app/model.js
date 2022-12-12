@@ -158,11 +158,11 @@ function addUserFunctions(id) {
   if(currentUser != null){
     $("#recipes #name-user").html(users[currentUser]["first-name"])
   }
-  $("#recipes #view-button").append(
+  $("#recipes #view-button").html(
     `<a href="#view/${id}"><button class="yellow-button">View</button></a>`
   );
   $("#recipes #user-buttons")
-    .append(`<a href="#edit/${id}"><button class="yellow-button user-button">Edit Recipe</button></a>
+    .html(`<a href="#edit/${id}"><button class="yellow-button user-button">Edit Recipe</button></a>
              <button id="${id}" class="yellow-button user-button delete">Delete</button>`);
 }
 
