@@ -127,9 +127,9 @@ function displayRecipePreviews(content, location) {
             <div class="recipe-content">
             <div class="recipe-view-img" style="background-image: url(${
               recipe[content[i].id]["recipe-img"]
-            })"><div id="view-button"></div></div>
+            })"><div id="view-button" class="${content[i].id}"></div></div>
             <div class="recipe-view-details">
-                <a id="${i}" href="#view/${i}" class="recipe-details-title">${
+                <a id="${content[i].id}" href="#view/${content[i].id}" class="recipe-details-title">${
       recipe[content[i].id].name
     }</a>
                 <p class="recipe-details-desc">${
@@ -147,7 +147,7 @@ function displayRecipePreviews(content, location) {
                 </table>
             </div>
             </div>
-            <div id="user-buttons">
+            <div id="user-buttons" class="${content[i].id}">
             </div>
             </div>`);
     addUserFunctions(content[i].id);
@@ -158,12 +158,14 @@ function addUserFunctions(id) {
   if(currentUser != null){
     $("#recipes #name-user").html(users[currentUser]["first-name"])
   }
-  $("#recipes #view-button").append(
-    `<a href="#view/${id}"><button class="yellow-button">View</button></a>`
-  );
-  $("#recipes #user-buttons")
-    .append(`<a href="#edit/${id}"><button class="yellow-button user-button">Edit Recipe</button></a>
-             <button id="${id}" class="yellow-button user-button delete">Delete</button>`);
+    let contentID = "#" + id;
+    $("#recipes " + contentID + " #view-button").append(
+      `<a href="#view/${id}"><button class="yellow-button">View</button></a>`
+    );
+    $("#recipes " + contentID + " #user-buttons")
+      .append(`<a href="#edit/${id}"><button class="yellow-button user-button">Edit Recipe</button></a>
+               <button id="${id}" class="yellow-button user-button delete">Delete</button>`);
+  
 }
 
 //change the name for creating a recipe
