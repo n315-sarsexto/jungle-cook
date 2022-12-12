@@ -363,10 +363,16 @@ nav .nav-menu:hover * {
   width: 20px;
   margin: 0 20px 16px 0;
 }
+.recipes-view .recipes-display .display-recipe #view-button a {
+  text-decoration: none;
+}
 .recipes-view .recipes-display .display-recipe #user-buttons {
   width: 56%;
   display: flex;
   justify-content: space-between;
+}
+.recipes-view .recipes-display .display-recipe #user-buttons a {
+  text-decoration: none;
 }
 .recipes-view .recipes-display .display-recipe #user-buttons button {
   width: 49%;
@@ -695,6 +701,30 @@ footer .footer-socials {
 footer .footer-socials img {
   width: 20px;
   height: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  footer {
+    padding: 40px 10px;
+  }
+}
+@media screen and (max-width: 550px) {
+  footer {
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  footer .footer-copy {
+    order: 1;
+  }
+  footer .footer-links {
+    order: 3;
+    width: 80%;
+    margin: 0 auto;
+  }
+  footer .footer-socials {
+    order: 2;
+    width: 20%;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */

@@ -132,11 +132,20 @@
                 }
             }
 
+            #view-button{
+                a{
+                    text-decoration: none;
+                }
+            }
             #user-buttons {
                 width: 56%;
 
                 display: flex;
                 justify-content: space-between;
+
+                a{
+                    text-decoration: none;
+                }
 
                 button {
                     width: 49%;
