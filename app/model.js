@@ -11,7 +11,7 @@ export var users = [
     "last-name": "user",
     email: "admin@junglecook.com",
     password: "password",
-    recipes: [{ id: 1 }],
+    recipes: [{ id: 3 }],
   },
 ];
 export var currentUser = null;
