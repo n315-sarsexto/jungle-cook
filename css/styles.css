@@ -314,6 +314,7 @@ nav .nav-menu:hover * {
   background-repeat: no-repeat;
   background-size: cover;
   border-radius: 20px;
+  background-color: #393939;
 }
 .recipes-view .recipes-display .display-recipe .recipe-content .recipe-view-details {
   height: 100%;
@@ -619,6 +620,7 @@ nav .nav-menu:hover * {
   width: 45%;
   height: 420px;
   overflow: hidden;
+  background-color: #393939;
 }
 .recipeDetails .recipeOverview #recipeImage img {
   width: 100%;
