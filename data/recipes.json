@@ -16,8 +16,8 @@
         "time": "30 min",
         "description": "Sink your teeth into a delicious restaurant-style, hamburger recipe made from lean beef. Skip the prepackaged patties and take the extra time to craft up your own, and that little extra effort will be worth it.",
         "servings": 4,
-        "ingredients": [],
-        "instructions": []
+        "ingredients": ["2lbs of ground beef", "1 pack age of store-bought hamburger buns", "Condiments to taste"],
+        "instructions": ["Thaw frozen beef using hot water.","Separate the ground beef into patties","Grill patties on stove-top using vegetable oil until browned to preference","Warm hamburger buns in the microwave for 30 seconds", "Construct burger using preferred condiments"]
     },
     {
         "id": 2,
@@ -26,8 +26,8 @@
         "time": "1 h 15 min",
         "description": "Chicken Biryani is a bold and flavorful Indian dish with crazy tender bites of chicken with bell peppers in a deliciously spiced and fragrant rice.",
         "servings": 6,
-        "ingredients": [],
-        "instructions": []
+        "ingredients": ["2 full bell peppers, diced", "4 cups of rice", "3 chicken breasts"],
+        "instructions": ["Feel free to add some!"]
     },
     {
         "id": 3,
@@ -36,7 +36,7 @@
         "time": "20 min",
         "description": "A great Chow Mein comes down to the sauce - it takes more than just soy sauce and sugar! Jam packed with a surprising amount of hidden vegetables, customize this Chicken Chow Mein recipe using your protein of choice!",
         "servings": 4,
-        "ingredients": [],
-        "instructions": []
+        "ingredients": ["Feel free to add some!"],
+        "instructions": ["Feel free to add some!"]
     }
 ]
